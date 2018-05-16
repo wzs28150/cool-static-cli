@@ -1,6 +1,4 @@
-# cool-static-cli
-
-# Webpack 4 starter kit for multipage static websites
+# cool-static-cli(Webpack 4 for multipage static websites)
 * HTML (lodash template)
 * Modern JavaScript
 * SCSS
