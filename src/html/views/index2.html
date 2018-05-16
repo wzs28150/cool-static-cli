@@ -1,0 +1,11 @@
+<% var data = {
+  title: "Project Title"
+}; %>
+<%= _.template(require('../includes/header.html'))(data) %>
+<div id="svg-sprites"></div>
+<main class="main">
+  <h1>It Works2!</h1>
+  <svg><use xlink:href="#test-svg"></use></svg>
+</main>
+
+<%= _.template(require('../includes/footer.html'))(data) %>

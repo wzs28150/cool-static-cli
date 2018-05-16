@@ -1,0 +1,57 @@
+{
+  "name": "webpack-static-html-scss",
+  "version": "1.0.0",
+  "description": "Webpack 4 starter kit for multipage static websites",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --mode development",
+    "watch": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "postbuild": "html dist/*.html --indent-size 2"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.0",
+    "object-fit-images": "^3.2.3",
+    "picturefill": "^3.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-runtime": "^6.26.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-friendly-formatter": "^4.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-cli": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.8.3",
+    "postcss-import": "^11.1.0",
+    "postcss-load-config": "^1.2.0",
+    "postcss-loader": "^2.1.3",
+    "postcss-url": "^7.3.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.7",
+    "svg-sprite-loader": "^3.7.3",
+    "svgo": "^1.0.5",
+    "svgo-loader": "^2.1.0",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "safari >= 7",
+    "ie >= 11"
+  ]
+}

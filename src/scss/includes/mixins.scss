@@ -1,0 +1,62 @@
+@mixin bgimg2x($file, $type) {
+  background-image: url($file+'.'+$type);
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
+    & {
+      background-image: url($file+'@2x.'+$type);
+    }
+  }
+}
+
+@mixin placeholderColor($color, $colorFocus) {
+  input::placeholder {
+    color: $color !important;
+  }
+  input:focus::placeholder {
+    color: $colorFocus !important;
+  }
+  textarea::placeholder {
+    color: $color !important;
+    &:focus {
+      color: $colorFocus !important;
+    }
+  }
+  textarea:focus::placeholder {
+    color: $colorFocus !important;
+  }
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin object-fit($fit: fill, $position: null) {
+  -o-object-fit: $fit;
+  object-fit: $fit;
+  @if $position {
+    -o-object-position: $position;
+    object-position: $position;
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+    font-family: 'object-fit: #{$fit}';
+  }
+}
+
+@function rem($pixels, $context: $baseFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
