@@ -4,15 +4,14 @@
 * SCSS
 * PostCSS
 
+## Demo
+> https://wzs28150.github.io/cool-static-cli/dist/
 ## Installation
 > npm i
 ## Development
 > npm run dev
-
 ## Build
 > npm run  build
-
-##
 ### SVG Sprites
 * Put svg files in src/img/svg
 * In HTML, use `<svg><use xlink:href="#svg-file-name"></use></svg>`
