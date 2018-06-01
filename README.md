@@ -25,8 +25,17 @@
 |   +-- favicon
 |   +-- fonts
 |   +-- html
+|   |   +-- include
+|   |   |   +-- header.html
+|   |   |   +-- footer.html
+|   |   +-- views
+|   |   |   +-- index.html
 |   +-- img
 |   +-- js
+|   |   +-- package
+|   |   +-- page
+|   |   +-- index.js
+|   |   +-- main.js
 |   +-- media
 |   +-- scss
 +-- webpack.config.js
