@@ -1,6 +1,7 @@
 # cool-static-cli(Webpack 4 for multipage static websites)
 * HTML (lodash template)
 * Modern JavaScript
+* Jquery + pjax for SEO
 * SCSS
 * PostCSS
 
