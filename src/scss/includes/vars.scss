@@ -1,3 +1,17 @@
-$baseFontSize: 16px;
-$font-stack: 'Open Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont,
-  sans-serif;
+$baseFontSize: 14px;
+$font-stack: 'Open Sans', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+$font: 12px, 14px, 16px, 18px, 20px, 22px, 24px, 26px, 28px, 32px, 36px;
+$tr4: all 0.4s, transform 0.4s; /*动画时间*/
+$breakpoints: (
+  m320 : 320px,
+  m360 : 360px,
+  m720 : 720px,
+  m1024: 1024px,
+  m1200: 1200px,
+  m1440: 1440px,
+  m1920: 1920px
+); /*响应式断点*/
+$container-width: (
+  m1200: (width: 1100px),
+  m1440: (width: 1200px),
+);

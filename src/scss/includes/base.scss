@@ -1,8 +1,8 @@
 * {
   box-sizing: inherit;
 
-  &:before,
-  &:after {
+  &:after,
+  &:before {
     box-sizing: inherit;
   }
 }
@@ -11,84 +11,83 @@ iframe {
   border: none !important;
 }
 
+audio,
 img,
-video,
-audio {
+video {
   max-width: 100%;
-  height: auto;
+  height   : auto;
 }
 
 button,
 input,
 select,
 textarea {
-  appearance: none;
+  appearance   : none;
   border-radius: 0;
 }
 
 input::-ms-clear,
 input::-ms-reveal {
   display: none;
-  width: 0;
-  height: 0;
+  width  : 0;
+  height : 0;
 }
 
 select::-ms-expand {
   display: none;
 }
 
-label, 
 button,
-select { 
-  cursor: pointer; 
+label,
+select {
+  cursor: pointer;
 }
 
 html {
-  box-sizing: border-box;
+  box-sizing                 : border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
   -webkit-text-size-adjust: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  background: #fff;
-  color: #000;
-  font-size: $baseFontSize;
-  font-family: $font-stack;
-  font-weight: 400;
-  min-width: 320px;
-  margin: 0 auto;
-  position: relative;
+  -webkit-font-smoothing  : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+  text-rendering          : optimizeLegibility;
+  background              : #fff;
+  color                   : #000;
+  font-size               : $baseFontSize;
+  font-family             : $font-stack;
+  font-weight             : 400;
+  min-width               : 320px;
+  margin                  : 0 auto;
+  position                : relative;
 }
 
 .page__layout {
-  height: auto;
-  min-height: 100vh;
-  display: flex;
+  height        : auto;
+  min-height    : 100vh;
+  display       : flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow      : hidden;
 }
 
 main.main {
   flex: 1 0 auto;
 }
 
-p,
-ul,
-ol,
 address,
-figure,
 blockquote,
-table {
-  margin: 0;
-  margin-bottom: 20px;
+figure,
+ol,
+p,
+table,
+ul {
+  margin: 0 0 20px;
 }
 
 blockquote {
-  display: block;
-  border-left: 5px solid #000;
+  display     : block;
+  border-left : 5px solid #000;
   padding-left: 15px;
 }
 
@@ -99,7 +98,6 @@ h4,
 h5,
 h6 {
   margin: 0;
-  margin-bottom: 20px;
 }
 
 ::selection {

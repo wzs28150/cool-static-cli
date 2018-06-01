@@ -1,0 +1,44 @@
+header {
+  position        : fixed;
+  left            : 0;
+  top             : 0;
+  z-index         : 5;
+  width           : 100%;
+  height          : 100px;
+  background-color: #fff;
+  box-shadow      : 0 0 2px #ccc;
+
+  .logo {
+    height     : 60px;
+    line-height: 60px;
+  }
+
+  nav {
+    height          : 40px;
+    background-color: #802a2a;
+
+    a {
+      line-height: 40px;
+      color      : #fff;
+      display    : inline-block;
+      padding    : 0 20px;
+      transition : $tr4;
+
+      &:hover {
+        background-color: #fff;
+        color           : #802a2a;
+        transition      : $tr4;
+      }
+
+      &.on {
+        background-color: #fff;
+        color           : #802a2a;
+        transition      : $tr4;
+      }
+    }
+  }
+}
+
+main {
+  padding-top: 100px;
+}

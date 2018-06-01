@@ -1,5 +1,6 @@
 import '../debouncedresize/jquery.debouncedresize'
-
+import 'jquery-mousewheel'
+import 'malihu-custom-scrollbar-plugin'
 /**
  * 回到顶部
  * @return {[type]} [description]
@@ -19,9 +20,7 @@ const backtotop = () => {
   });
   $('.backtotop a.totop').on('click', function(event) {
     event.preventDefault();
-    $('body,html').animate({
-      scrollTop: 0,
-    }, 700);
+    $('body').mCustomScrollbar("scrollTo",0);
   });
 };
 /**
@@ -30,8 +29,9 @@ const backtotop = () => {
  * @return {[type]}   [description]
  */
 var navactive = (i) => {
-  $('nav ul li').find('a').removeClass('on');
-  $('nav ul li').eq(i).find('a').addClass('on');
+  // console.log(i);
+  $('nav a').removeClass('on');
+  $('nav a').eq(i).addClass('on');
   if ($(window).width() < 980) {
     $('nav a').click(function() {
       $('#myInput').attr('checked', false);

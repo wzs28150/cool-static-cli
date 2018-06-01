@@ -1,6 +1,8 @@
 import router from './package/router/router'
 import pajax from './package/pajax/pajax'
-import smoothscroll from './package/scroll/jquery.smooth-scroll.min';
+import 'jquery-mousewheel'
+import 'malihu-custom-scrollbar-plugin'
+
 /**
  * 判断dom是否存在
  * @param  {[type]} selector [description]
@@ -51,9 +53,7 @@ const alertinfo = (info, aurl) => {
  */
 const backtotop = () => {
   $("#backtotop").on("click", function() {
-    $('body,html').animate({
-      scrollTop: 0
-    }, 1000);
+    $('body').mCustomScrollbar("scrollTo",0);
     return false;
   });
 }
@@ -74,54 +74,14 @@ const minheight = () => {
   }
   $('article').css('min-height', mh + 'px');
 }
-/**
- * 留言板
- * @return {[type]} [description]
- */
-const msg = () => {
-  $('body').undelegate('.msg a', 'click');
-  $('body').delegate('.msg a', 'click', function(event) {
-    var name = $('#name').val();
-    var tel = $('#tel').val();
-    var email = $('#email').val();
-    var msg = $('#msg').val();
-    var url = $('.msg').attr('data-url');
-    if (!name) {
-      //用户名不能为空
-      alertinfo('Имя пользователя  не может быть пустым！');
-    }
-    if (!tel) {
-      //电话号码不能为空
-      alertinfo('номер телефона  не может быть пустым ！');
-    }
-    if (!email) {
-      //邮箱不能为空
-      alertinfo('почтовый ящик  не может быть пустым！');
-    }
-    if (!msg) {
-      //内容不能为空
-      alertinfo('содержание  не может быть пустым ！');
-    }
-    arrData = {
-      'name': name,
-      'tel': tel,
-      'email': email,
-      'msg': msg
-    };
-    $.post(url, arrData,
-      function(data) {
-        if ('118' == data.err_code) {
-          alertinfo(data.err_info);
-        } else {
-          alertinfo(data.err_info);
-        }
-      }, "json"
-    );
-
-  });
-}
 
 const init = () => {
+  $(window).on("load", function() {
+    $("body").mCustomScrollbar({
+      theme:"dark",
+      scrollbarPosition:"inside"
+    });
+  });
   router.init('article', false);
   pajax.init('main', function() {}, function(targetelement, state) {
     router.init('article', false);
@@ -130,11 +90,12 @@ const init = () => {
       setTimeout(function() {
         //console.log($('#' + targetelement).offset().top);
         console.log($('.top').height());
-        $.smoothScroll({
-          offset: -($('header').outerHeight() + $('.top').outerHeight() + 20),
-          speed: 500,
-          scrollTarget: '#' + targetelement
-        });
+        $('body').mCustomScrollbar("scrollTo",-($('header').outerHeight() + $('.top').outerHeight() + 20));
+        // $.smoothScroll({
+        //   offset: -($('header').outerHeight() + $('.top').outerHeight() + 20),
+        //   speed: 500,
+        //   scrollTarget: '#' + targetelement
+        // });
       }, 500);
     }
   });

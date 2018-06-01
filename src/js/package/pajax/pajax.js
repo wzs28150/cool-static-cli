@@ -1,5 +1,6 @@
 import pjax from './jquery.pjax'
-
+import 'jquery-mousewheel'
+import 'malihu-custom-scrollbar-plugin'
 //console.log(alertinfo);
 /**
  * pajax 页面无刷新
@@ -55,9 +56,7 @@ var pageajax = (article, start, callbak) => {
           if (targetelement && $('article').attr('data-main') == localStorage.mainaction) {
 
           } else {
-            $('html,body').stop().animate({
-              scrollTop: 0,
-            }, 400);
+            $('body').mCustomScrollbar("scrollTo",0);
           }
 
         }

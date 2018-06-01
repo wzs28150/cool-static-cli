@@ -1,62 +1,197 @@
 @mixin bgimg2x($file, $type) {
   background-image: url($file+'.'+$type);
-
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
     & {
       background-image: url($file+'@2x.'+$type);
     }
   }
 }
-
 @mixin placeholderColor($color, $colorFocus) {
   input::placeholder {
     color: $color !important;
   }
+
   input:focus::placeholder {
     color: $colorFocus !important;
   }
+
   textarea::placeholder {
     color: $color !important;
+
     &:focus {
       color: $colorFocus !important;
     }
   }
+
   textarea:focus::placeholder {
     color: $colorFocus !important;
   }
 }
-
 @mixin clearfix {
-  &:before,
-  &:after {
-    content: '';
+  &:after,
+  &:before {
+    content: "";
     display: table;
   }
+
   &:after {
     clear: both;
   }
 }
-
 @mixin object-fit($fit: fill, $position: null) {
   -o-object-fit: $fit;
-  object-fit: $fit;
+  object-fit   : $fit;
   @if $position {
     -o-object-position: $position;
-    object-position: $position;
-    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+    object-position   : $position;
+    font-family       : "object-fit: #{$fit}; object-position: #{$position}";
   } @else {
-    font-family: 'object-fit: #{$fit}';
+    font-family: "object-fit: #{$fit}";
   }
 }
-
 @function rem($pixels, $context: $baseFontSize) {
   @if (unitless($pixels)) {
     $pixels: $pixels * 1px;
   }
-
   @if (unitless($context)) {
     $context: $context * 1px;
   }
-
   @return $pixels / $context * 1rem;
+}
+/*处理动画时间*/
+@mixin tr($time,$type) {
+  transition: $type $time;
+}
+/*响应式宽度判断*/
+@mixin max-screen($res) {
+  @media (max-width: $res) {
+    @content;
+  }
+}
+@mixin min-screen($res) {
+  @media (min-width: $res) {
+    @content;
+  }
+}
+/*响应式高度判断*/
+@mixin maxh-screen($res) {
+  @media (max-height: $res) {
+    @content;
+  }
+}
+@mixin pc-wap-show($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      display: nth($fs-font-size, 1)!important;
+    } @else {
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        display: nth($fs-font-size, 1)!important;
+      }
+    }
+  }
+}
+@mixin css-set($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-value in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-css-set($fs-value);
+    } @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-css-set($fs-value);
+      }
+    }
+  }
+}
+@mixin make-css-set($fs-value) {
+  @if map-has-key($fs-value, width) {
+    width: map-get($fs-value, width);
+  }
+  @if map-has-key($fs-value, height) {
+    height: map-get($fs-value, height);
+  }
+  @if map-has-key($fs-value, margin) {
+    margin: map-get($fs-value, margin);
+  }
+  @if map-has-key($fs-value, padding) {
+    padding: map-get($fs-value, padding);
+  }
+  @if map-has-key($fs-value, color) {
+    color: map-get($fs-value, color);
+  }
+  @if map-has-key($fs-value, background-color) {
+    background-color: map-get($fs-value, background-color);
+  }
+  @if map-has-key($fs-value, background-size) {
+    background-size: map-get($fs-value, background-size);
+  }
+  @if map-has-key($fs-value, background-position) {
+    background-position: map-get($fs-value, background-position);
+  }
+  @if map-has-key($fs-value, background-image) {
+    background-image: map-get($fs-value, background-image);
+  }
+  @if map-has-key($fs-value, border) {
+    border: map-get($fs-value, border);
+  }
+  @if map-has-key($fs-value, line-height) {
+    line-height: map-get($fs-value, line-height);
+  }
+  @if map-has-key($fs-value, display) {
+    display: map-get($fs-value, display);
+  }
+  @if map-has-key($fs-value, visibility) {
+    visibility: map-get($fs-value, visibility);
+  }
+  @if map-has-key($fs-value, position) {
+    position: map-get($fs-value, position);
+  }
+  @if map-has-key($fs-value, top) {
+    top: map-get($fs-value, top);
+  }
+  @if map-has-key($fs-value, left) {
+    left: map-get($fs-value, left);
+  }
+  @if map-has-key($fs-value, right) {
+    right: map-get($fs-value, right);
+  }
+  @if map-has-key($fs-value, right) {
+    bottom: map-get($fs-value, bottom);
+  }
+  @if map-has-key($fs-value, float) {
+    float: map-get($fs-value, float);
+  }
+  @if map-has-key($fs-value, font-size) {
+    font-size: map-get($fs-value, font-size);
+  }
+  @if map-has-key($fs-value, border-bottom) {
+    border-bottom: map-get($fs-value, border-bottom);
+  }
+  @if map-has-key($fs-value, border-top) {
+    border-top: map-get($fs-value, border-top);
+  }
+  @if map-has-key($fs-value, border-left) {
+    border-left: map-get($fs-value, border-left);
+  }
+  @if map-has-key($fs-value, border-right) {
+    border-right: map-get($fs-value, border-right);
+  }
+  @if map-has-key($fs-value, max-width) {
+    max-width: map-get($fs-value, max-width);
+  }
+  @if map-has-key($fs-value, text-align) {
+    text-align: map-get($fs-value, text-align);
+  }
+  @if map-has-key($fs-value, overflow-y) {
+    overflow-y: map-get($fs-value, overflow-y);
+  }
+  @if map-has-key($fs-value, overflow) {
+    overflow: map-get($fs-value, overflow);
+  }
 }
