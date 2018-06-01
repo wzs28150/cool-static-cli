@@ -26,7 +26,7 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins('./src/html/views');
 
 module.exports = {
-  entry: ['./src/js/index.js', './src/js/index2.js', './src/scss/style.scss'],
+  entry: ['./src/js/index.js', './src/scss/style.scss'],
   output: {
     filename: './js/bundle.js'
   },

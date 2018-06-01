@@ -1,11 +1,16 @@
 <% var data = {
   title: "Project Title"
 }; %>
-<%= _.template(require('../includes/header.html'))(data) %>
-<div id="svg-sprites"></div>
-<main class="main">
-  <h1>It Works!</h1>
-  <svg><use xlink:href="#test-svg"></use></svg>
-</main>
+  <%= _.template(require('../includes/header.html'))(data) %>
+    <main class="main">
+      <article class="index" data-main="index">
+        <section class="main-container">
+          <div class="container">
+            <h1>It Works!</h1>
+            <svg><use xlink:href="#test-svg"></use></svg>
+          </div>
+        </section>
+      </article>
+    </main>
 
-<%= _.template(require('../includes/footer.html'))(data) %>
+    <%= _.template(require('../includes/footer.html'))(data) %>
