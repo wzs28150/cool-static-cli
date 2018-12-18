@@ -1,0 +1,222 @@
+// 二级页banner
+
+strong {
+  font-weight: bold;
+}
+
+.er-banner {
+  height             : 350px;
+  background-position: center;
+  background-size    : cover;
+}
+
+.page {
+  padding-top  : 40px;
+  margin-bottom: 120px;
+
+  .page-left {
+    width       : 250px;
+    margin-right: 30px;
+
+    .left-title {
+      background-image : url("../img/left_title_bg.jpg");
+      background-repeat: no-repeat;
+      background-size  : cover;
+      color            : #fff;
+      text-align       : center;
+      height           : 60px;
+      line-height      : 60px;
+      font-size        : 20px;
+    }
+
+    .left-nav {
+      & > ul {
+        & > li {
+          border: 1px solid #e2e9ec;
+
+          & > a {
+            display     : block;
+            padding-left: 20px;
+            height      : 48px;
+            line-height : 48px;
+            color       : #666;
+          }
+
+          &.on {
+            border: 1px solid #00a5e3;
+
+            & > a {
+              color: #00a5e3;
+            }
+          }
+        }
+      }
+    }
+
+    .left-contact {
+      margin-top: 20px;
+
+      .item {
+        border     : 1px solid #e2e9ec;
+        text-align : center;
+        padding    : 15px 40px;
+        font-size  : 14px;
+        line-height: 24px;
+        color      : #666;
+
+        .tel {
+          font-size  : 20px;
+          font-weight: bold;
+          color      : #333;
+        }
+      }
+    }
+  }
+
+  .page-right {
+    width : 918px;
+    border: 1px solid #e2e9ec;
+
+    .breadcrumbs {
+      line-height  : 44px;
+      overflow     : hidden;
+      border-bottom: 1px solid #e2e9ec;
+
+      .fl {
+        color       : #00a5e3;
+        padding-left: 30px;
+        position    : relative;
+
+        &::before {
+          content         : "";
+          background-color: #00a5e3;
+          display         : block;
+          width           : 4px;
+          height          : 20px;
+          position        : absolute;
+          left            : 20px;
+          top             : 12px;
+        }
+      }
+
+      .fr {
+        padding-right: 20px;
+        font-size    : 0;
+        line-height  : 0;
+
+        span {
+          display    : inline-block;
+          height     : 44px;
+          line-height: 44px;
+          font-size  : 14px;
+
+          &.home {
+            width              : 18px;
+            background-image   : url("../img/home.png");
+            background-repeat  : no-repeat;
+            background-position: center;
+          }
+        }
+
+        a {
+          font-size  : 14px;
+          display    : inline-block;
+          height     : 44px;
+          line-height: 44px;
+          transition : $tr4;
+
+          &:hover {
+            color     : #00a5e3;
+            transition: $tr4;
+          }
+        }
+      }
+    }
+
+    .page-content {
+      min-height: 537px;
+
+      .inner {
+        padding    : 25px;
+        font-size  : 16px;
+        line-height: 30px;
+
+        img {
+          max-width: 100%;
+          display  : block;
+        }
+      }
+    }
+  }
+}
+// 上一篇下一篇
+
+.pBn {
+  padding-bottom: 0!important;
+}
+
+.page_up_down {
+  height     : 46px;
+  line-height: 46px;
+  border-top : 1px solid #e2e9ec;
+  font-size  : 14px;
+
+  a {
+    display   : block;
+    float     : left;
+    width     : calc(50% - 25px);
+    transition: $tr4;
+
+    &:first-child {
+      text-align  : left;
+      padding-left: 25px;
+    }
+
+    &:last-child {
+      text-align   : right;
+      padding-right: 25px;
+    }
+
+    &:hover {
+      color     : #00a5e3;
+      transition: $tr4;
+    }
+  }
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 25px;
+
+  ul {
+    border       : 1px solid #e2e9ec;
+    display      : inline-block;
+    border-radius: 4px;
+    font-size    : 0;
+    line-height  : 0;
+    overflow     : hidden;
+
+    a {
+      display    : inline-block;
+      width      : 28px;
+      line-height: 28px;
+      font-size  : 14px;
+      border     : 1px solid #e2e9ec;
+      transition : $tr4;
+
+      &:first-child,
+      &:last-child {
+        width      : 58px;
+        line-height: 28px;
+      }
+
+      &.on,
+      &:hover {
+        background-color: #00a5e3;
+        color           : #fff;
+        border-color    : #00a5e3;
+        transition      : $tr4;
+      }
+    }
+  }
+}

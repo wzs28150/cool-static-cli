@@ -1,5 +1,7 @@
 * {
   box-sizing: inherit;
+  margin    : 0;
+  padding   : 0;
 
   &:after,
   &:before {
@@ -44,7 +46,7 @@ select {
 }
 
 html {
-  box-sizing                 : border-box;
+  // box-sizing                 : border-box;main
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -72,18 +74,17 @@ body {
 }
 
 main.main {
-  flex: 1 0 auto;
+  // flex: 1 0 auto;
 }
-
-address,
-blockquote,
-figure,
-ol,
-p,
-table,
-ul {
-  margin: 0 0 20px;
-}
+// address,
+// blockquote,
+// figure,
+// ol,
+// p,
+// table,
+// ul {
+//   margin: 0 0 20px;
+// }
 
 blockquote {
   display     : block;
@@ -102,4 +103,14 @@ h6 {
 
 ::selection {
   background-color: lighten(rgba(#000, 0.2), 10) !important;
+}
+
+ul {
+  margin    : 0;
+  padding   : 0;
+  list-style: none;
+}
+
+a {
+  color: #333;
 }

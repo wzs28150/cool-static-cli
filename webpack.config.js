@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -28,7 +29,7 @@ const htmlPlugins = generateHtmlPlugins('./src/html/views');
 module.exports = {
   entry: ['./src/js/index.js', './src/scss/style.scss'],
   output: {
-    filename: './js/bundle.js'
+    filename: './js/meUi.js'
   },
   devtool: 'source-map',
   module: {
@@ -124,7 +125,9 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
-      'window.$': 'jquery'
+      'window.$': 'jquery',
+      PhotoSwipe: 'photoswipe',
+      PhotoSwipeUI_Default: 'photoswipe/src/js/ui/photoswipe-ui-default.js'
     })
   ].concat(htmlPlugins),
   devServer: {

@@ -1,16 +1,18 @@
-import pjax from './jquery.pjax'
-import 'jquery-mousewheel'
-import 'malihu-custom-scrollbar-plugin'
+/* jshint esversion: 6 */
+import pjax from './jquery.pjax';
+import 'jquery-mousewheel';
+import 'malihu-custom-scrollbar-plugin';
+import alertinfo from '../alertinfo/alertinfo';
 //console.log(alertinfo);
 /**
  * pajax 页面无刷新
  * @return {[type]} [description]
  */
- var url = '';
- var container = '';
- var fragment = '';
- var istop = '';
- var targetelement = '';
+var url = '';
+var container = '';
+var fragment = '';
+var istop = '';
+var targetelement = '';
 var pageajax = (article, start, callbak) => {
   if ($.support.pjax) {
     $('body').stop().undelegate('a[data-ajax!=no]', 'click');
@@ -21,8 +23,8 @@ var pageajax = (article, start, callbak) => {
       fragment = $(this).attr("data-fragment");
       istop = $(this).attr('data-istop');
       targetelement = $(this).attr('data-target');
-      if(!url){
-        alertinfo.initModule('网站维护中...')
+      if (!url) {
+        alertinfo.init('网站维护中...');
       }
 
       if (container) {
@@ -56,7 +58,7 @@ var pageajax = (article, start, callbak) => {
           if (targetelement && $('article').attr('data-main') == localStorage.mainaction) {
 
           } else {
-            $('body').mCustomScrollbar("scrollTo",0);
+            $('body').mCustomScrollbar("scrollTo", 0);
           }
 
         }
@@ -96,13 +98,13 @@ var pageajax = (article, start, callbak) => {
       $('.pjaxcontainer').stop().animate({
         opacity: "1"
       }, 300);
-      if("undefined" != typeof targetelement){
+      if ("undefined" != typeof targetelement) {
         if (xhr.container != 'main') {
           callbak(targetelement, true);
         } else {
           callbak(targetelement, false);
         }
-      }else{
+      } else {
         if (xhr.container != 'main') {
           callbak('', true);
         } else {

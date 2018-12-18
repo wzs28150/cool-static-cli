@@ -8,7 +8,7 @@ import 'malihu-custom-scrollbar-plugin'
 const backtotop = () => {
   // console.log(1);
   var min_height = 500;
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     //获取窗口的滚动条的垂直位置
     var s = $(window).scrollTop();
     //当窗口的滚动条的垂直位置大于页面的最小高度时，让返回顶部元素渐现，否则渐隐
@@ -16,11 +16,11 @@ const backtotop = () => {
       $(".backtotop").fadeIn(100);
     } else {
       $(".backtotop").fadeOut(200);
-    };
+    }
   });
-  $('.backtotop a.totop').on('click', function(event) {
+  $('.backtotop a.totop').on('click', function (event) {
     event.preventDefault();
-    $('body').mCustomScrollbar("scrollTo",0);
+    $('body').mCustomScrollbar("scrollTo", 0);
   });
 };
 /**
@@ -30,16 +30,16 @@ const backtotop = () => {
  */
 var navactive = (i) => {
   // console.log(i);
-  $('nav a').removeClass('on');
-  $('nav a').eq(i).addClass('on');
+  $('nav>ul>li>a').removeClass('on');
+  $('nav>ul>li').eq(i).find('>a').addClass('on');
   if ($(window).width() < 980) {
-    $('nav a').click(function() {
+    $('nav a').click(function () {
       $('#myInput').attr('checked', false);
     });
   }
-  $(window).on('debouncedresize', function() {
+  $(window).on('debouncedresize', function () {
     if ($(window).width() < 980) {
-      $('nav a').click(function() {
+      $('nav a').click(function () {
         $('#myInput').attr('checked', false);
       });
     }
@@ -55,20 +55,20 @@ const sub_nav = (i) => {
   $('.er-bar .er-nav a').eq(i).addClass('on');
 
   if ($(window).width() < 980) {
-    $('.er-bar .er-nav a').click(function() {
+    $('.er-bar .er-nav a').click(function () {
       $('#ermenu').attr('checked', false);
     });
   }
-  $(window).on('debouncedresize', function() {
+  $(window).on('debouncedresize', function () {
     if ($(window).width() < 980) {
-      $('.er-bar .er-nav a').click(function() {
+      $('.er-bar .er-nav a').click(function () {
         $('#ermenu').attr('checked', false);
       });
     }
   });
 
   if ($(".er-bar-targat").length > 0 && $(window).width() > 980) {
-    $(window).scroll(function() {
+    $(window).scroll(function () {
       var navH = $(".er-bar-targat").offset().top;
       //获取滚动条的滑动距离
       var scroH = $(this).scrollTop();
@@ -103,7 +103,7 @@ const routerset = (article, state) => {
       } else {
         localStorage.mainactionName = actionName;
         const action = require(`../../page/${actionName}`)
-        action.default.init(function(a) {
+        action.default.init(function (a) {
           navactive(a);
         });
         var str = "action.default." + eractionName + "(function(a){sub_nav(a);})";
@@ -112,7 +112,7 @@ const routerset = (article, state) => {
     } else {
       localStorage.mainactionName = actionName;
       const action = require(`../../page/${actionName}`)
-      action.default.init(function(a) {
+      action.default.init(function (a) {
         navactive(a);
         // sub_nav();
       });
@@ -120,7 +120,7 @@ const routerset = (article, state) => {
 
   }
 };
-const init = function(article, state) {
+const init = function (article, state) {
   routerset(article, state);
 };
 const router = {
