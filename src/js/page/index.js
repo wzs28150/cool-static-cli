@@ -2,18 +2,17 @@
 import debug from '../package/debug/debug'
 import Swiper from 'swiper';
 const banner = () => {
-  var bannerSwiper = new Swiper('.i_ban.swiper-container', {
-    pagination: {
-      el: '.i_ban .swiper-pagination',
-    },
+  var bannerSwiper = new Swiper('.index .banner', {
+    pagination: '.index .banner .swiper-pagination',
     loop: true,
-    speed: 2000,
-    autoplay: true
+    speed: 3000,
+    autoplay: 4000,
+    parallax: true
   });
 }
 const init = (callback) => {
   callback(0);
-  debug('index is load');
+  debug('index controller is load');
   banner();
 };
 

@@ -21,7 +21,7 @@
 * Put svg files in src/img/svg
 * In HTML, use `<svg><use xlink:href="#svg-file-name"></use></svg>`
 
-##Dir
+## Dir
 ```
 .
 +-- dist(Publish directory)
@@ -48,3 +48,9 @@
 +-- package.json
 
 ```
+
+更新计划:
+1.优化pjax + router
+2.优化滚动条 使用nicescroll  https://github.com/inuyaksa/jquery.nicescroll
+3.优化页面滚动动画 增加 aoc  https://github.com/michalsnik/aos
+4.增加 Parallax  Scrolling http://pixelcog.github.io/parallax.js/

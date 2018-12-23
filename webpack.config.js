@@ -95,7 +95,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
-        messages: ['Your website is running here: http://localhost:8080']
+        messages: ['Your website is running here: http://127.0.0.0:8080']
       }
     }),
     new ExtractTextPlugin({
@@ -124,10 +124,11 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
+      jquery: 'jquery',
       'window.jQuery': 'jquery',
       'window.$': 'jquery',
-      PhotoSwipe: 'photoswipe',
-      PhotoSwipeUI_Default: 'photoswipe/src/js/ui/photoswipe-ui-default.js'
+      // PhotoSwipe: 'photoswipe',
+      // PhotoSwipeUI_Default: 'photoswipe/src/js/ui/photoswipe-ui-default.js'
     })
   ].concat(htmlPlugins),
   devServer: {
@@ -135,6 +136,7 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    }
+    },
+    disableHostCheck:true
   }
 };

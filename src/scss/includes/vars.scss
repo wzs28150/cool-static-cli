@@ -12,6 +12,19 @@ $breakpoints: (
   m1920: 1920px
 ); /*响应式断点*/
 $container-width: (
-  m1200: (width: 1100px),
+  m320 : (width: auto, margin: 0 15px),
+  m1200: (width: 1100px, margin: 0 auto),
   m1440: (width: 1200px),
+);
+$h1: (
+  m320 : (font-size: 3.4em),
+  m1440: (font-size: 7.5em),
+);
+$h2: (
+  m320 : (font-size: 1.4em),
+  m1440: (font-size: 1.5em),
+);
+$p: (
+  m320 : (font-size: 1em),
+  m1440: (font-size: 2.1em),
 );

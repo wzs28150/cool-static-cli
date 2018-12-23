@@ -1,4 +1,177 @@
-// 二级页banner
+html {
+  height  : 100%;
+  overflow: hidden;
+  // scroll-behavior: auto;
+  // scroll-behavior: smooth;
+}
+
+body {
+  // overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.gray {
+  background-color: gray;
+}
+/* alert_player */
+.alert_player {
+  position: fixed;
+  top     : 0;
+  width   : 100%;
+  height  : 100%;
+  z-index : 99999999;
+
+  .bg {
+    width     : 100%;
+    height    : 100%;
+    position  : absolute;
+    top       : 0;
+    left      : 0;
+    background: rgba(0, 0, 0, .5);
+  }
+
+  .layer {
+    width        : 360px;
+    height       : 140px;
+    position     : absolute;
+    margin       : -60px 0 0 -180px;
+    left         : 50%;
+    top          : 50%;
+    background   : #fff;
+    border-radius: 10px;
+    text-align   : center;
+  }
+
+  .info {
+    height       : 50%;
+    line-height  : 360%;
+    border-bottom: 1px solid #ccc;
+    color        : #0a60ab;
+  }
+
+  .queren_btn {
+    background   : #0a60ab;
+    display      : inline-block;
+    padding      : 14px 60px;
+    margin       : 10px 0 0;
+    color        : #fff;
+    border-radius: 10px;
+  }
+}
+/*文字省略号*/
+
+.text-hidden {
+  display      : block;
+  white-space  : nowrap;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+}
+/*水平垂直居中*/
+
+.wh-center {
+  display            : -webkit-box;
+  display            : -ms-flexbox;
+  display            : -webkit-flex;
+  display            : flex;
+  -webkit-box-pack   : center;
+  -ms-flex-pack      : center;
+  justify-content    : center;
+  -webkit-box-align  : center;
+  -ms-flex-align     : center;
+  -webkit-align-items: center;
+  align-items        : center;
+}
+/*垂直居中*/
+
+.h-center {
+  display            : -webkit-box;
+  display            : -ms-flexbox;
+  display            : -webkit-flex;
+  display            : flex;
+  -webkit-box-align  : center;
+  -ms-flex-align     : center;
+  -webkit-align-items: center;
+  align-items        : center;
+}
+/*分组父级*/
+
+.felx-box {
+  display              : -webkit-box;
+  -webkit-box-orient   : horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-pack     : justify;
+  -webkit-box-align    : center;
+  display              : flex;
+  flex-flow            : row nowrap;
+  align-items          : left;
+}
+/*分组子级*/
+
+.felx-item {
+  -webkit-box-flex: 1;
+  flex-basis      : 1;
+  flex-grow       : 1;
+  flex-shrink     : 1;
+  flex            : 1 1 1;
+}
+/*pc*/
+.pc {
+  display: block!important;
+  @media screen and (max-width: 768px) {
+    display: none!important;
+  }
+}
+/*手机*/
+
+.wap {
+  display: none!important;
+  @media screen and (max-width: 768px) {
+    display: block!important;
+  }
+}
+/*container*/
+.container {
+  @include css-set($container-width);
+  margin  : 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.container-without-overflow {
+  @include css-set($container-width);
+  margin  : 0 auto;
+  position: relative;
+}
+
+.container-without-position {
+  @include css-set($container-width);
+  margin  : 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.container-without-all {
+  @include css-set($container-width);
+  margin: 0 auto;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+main {
+  background-color: #efefef;
+  position        : relative;
+  z-index         : 1;
+  overflow        : hidden;
+}
 
 strong {
   font-weight: bold;

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="zh-CN">
 
 <head>
   <meta charset="utf-8">
@@ -14,9 +14,6 @@
 </head>
 
 <body>
-  <div id="progress">
-    <span></span>
-  </div>
   <!-- 弹窗 -->
   <div class="alert_player" style="display:none;">
     <div class="bg"></div>
@@ -26,17 +23,35 @@
     </div>
   </div>
   <!-- 弹窗 -->
+  <input type="checkbox" id="navshow">
+
   <header>
-    <div class="logo">
-      <div class="container">
-        <h2>logo</h2>
+    <div class="container">
+      <div class="logo">
+        <h2>cool web</h2>
+      </div>
+      <nav>
+        <a href="index.html">首页</a>
+        <a href="index2.html">起步</a>
+        <a href="index.html" data-istop="no" data-main=".section2" data-target=".section2">组件</a>
+        <a href="">案例</a>
+      </nav>
+      <label for="navshow" class="navbar wap">
+        <div class="menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"> </div>
+        </div>
+      </label>
+      <div class="shadow wap"></div>
+    </div>
+  </header>
+
+  <div class="loaders">
+    <div class="loader">
+      <div class="ball-clip-rotate-multiple">
+        <div></div>
+        <div></div>
       </div>
     </div>
-    <nav>
-      <div class="container">
-        <a href="index.html">index</a>
-        <a href="index2.html">index2</a>
-        <a href="index.html" data-istop="no"  data-target="my">index3</a>
-      </div>
-    </nav>
-  </header>
+  </div>

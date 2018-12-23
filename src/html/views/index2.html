@@ -1,22 +1,18 @@
 <% var data = {
   title: "Project Title"
 }; %>
-  <%= _.template(require('../includes/header.html'))(data) %>
-    <main class="main">
-      <article class="index2" data-main="index2" style="height:2000px;">
-        <section class="">
-          <div class="container gray">
-            <h1>It Works2!</h1>
-            <svg><use xlink:href="#test-svg"></use></svg>
-          </div>
-        </section>
-        <section class="">
-          <div class="container gray">
-            <h1>It Works2!</h1>
-            <svg><use xlink:href="#test-svg"></use></svg>
-          </div>
-        </section>
-      </article>
-    </main>
+<%= _.template(require('../includes/header.html'))(data) %>
+<main class="main page-animate" >
+  <article class="index2" data-controller="index2" >
 
-    <%= _.template(require('../includes/footer.html'))(data) %>
+    <div style="width: 100%; height:2000px;">
+
+    <div class="aa"></div>
+    <style>
+      .aa{ width: 200px; height: 200px; background:#000;}
+    </style>
+    </div>
+  </article>
+</main>
+
+<%= _.template(require('../includes/footer.html'))(data) %>

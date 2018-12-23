@@ -1,9 +1,9 @@
 import debug from '../package/debug/debug'
-import Swiper from 'swiper';
-
+// import Swiper from 'swiper';
+//
 const init = (callback) => {
   callback(1);
-  debug('index2 is load');
+  debug('index2 controller is load');
 
 };
 

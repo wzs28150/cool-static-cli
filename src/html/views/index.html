@@ -1,22 +1,217 @@
 <% var data = {
   title: "Project Title"
 }; %>
-  <%= _.template(require('../includes/header.html'))(data) %>
-    <main class="main">
-      <article class="index" data-main="index" style="height:2000px;">
-        <section class="">
-          <div class="container gray">
-            <h1>It Works!</h1>
-            <svg><use xlink:href="#test-svg"></use></svg>
+<%= _.template(require('../includes/header.html'))(data) %>
+<main class="main page-animate">
+  <article class="index" data-controller="index">
+    <div class="banner swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide wh-center">
+          <div>
+          <h1 data-swiper-parallax="-100">Cool web</h1>
+          <p data-swiper-parallax="-1500">开源、免费、简单、轻量</p>
           </div>
-        </section>
-        <section class="" id="my">
-          <div class="container gray">
-            <h1>It Works!</h1>
-            <svg><use xlink:href="#test-svg"></use></svg>
+        </div>
+        <div class="swiper-slide wh-center">
+          <div>
+          <h1 data-swiper-parallax="-100">Cool web</h1>
+          <p data-swiper-parallax="-1500">开源、免费、简单、轻量</p>
           </div>
-        </section>
-      </article>
-    </main>
+        </div>
+        <div class="swiper-slide wh-center">
+          <div>
+          <h1 data-swiper-parallax="-100">Cool web</h1>
+          <p data-swiper-parallax="-1500">开源、免费、简单、轻量</p>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-white"></div>
+    </div>
+    <section class="section1" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+      <div class="container " style="">
+        <div class="inner">
+          <h2>为什么选择Cool web?</h2>
+          <p class="description">Why Choose Cool web</p>
+          <div class="content">
+            <p>有些项目简单没那么多功能,网上的框架又太大、太臃肿、学习成本高,只会简单js会点jquery</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section1" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+      <div class="container " style="">
+        <div class="inner">
+          <h2>页面无刷新,美化滚动条等提升页面体验</h2>
+          <p class="description">Using pjax to realize page refreshless</p>
+          <div class="content">
+            <p>采用pjax页面无刷新技术 </p>
+            <p>使用nicescroll改进页面滚动条</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section2" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+      <div class="container " style="">
+        <div class="inner">
+          <h2>使用 cli 安装 方便快捷</h2>
+          <p class="description">Easy and fast installation with cli</p>
+          <div class="content">
+            <h4>开始安装&nbsp;&nbsp;start:</h4>
+            <div class="code">npm i cool-static-cli -g</div>
+            <h4>初始化&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init:</h4>
+            <div class="code">mkdir project && cd project</div>
+            <div class="code">cool-static-cli init</div>
+            <div class="code">npm i</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section3" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+      <div class="container " style="">
+        <div class="inner">
+          <h2>采用 webpack4 开发环境 </h2>
+          <p class="description">Using webpack4 development environment</p>
+          <div class="content">
+            <h4>开发运行&nbsp;&nbsp;&nbsp;&nbsp;dev:</h4>
+            <div class="code">npm run dev</div>
+            <h4>打包发布&nbsp;&nbsp;build:</h4>
+            <div class="code">npm run build</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section4" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+      <div class="container " style="">
+        <div class="inner">
+          <h2>采用flexboxgrid 处理响应式布局</h2>
+          <p class="description">Using flexbox grid to handle responsive layout</p>
+          <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-10">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-10 col-lg-11">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-10 col-sm-6 col-md-8 col-lg-10">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-2 col-sm-6 col-md-4 col-lg-2">
+              <div class="box-row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section5" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+      <div class="container " style="">
+        <div class="inner">
+          <h2>采用aos.js 处理页面滚动动画</h2>
+          <p class='description'>Using aos.js to process page scrolling animation</p>
+          <div class="row">
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="fade" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">fade</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">fade-up</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="fade-down" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">fade-down</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="fade-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">fade-left</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">Responsive</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="fade-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">fade-right</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="fade-up-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">fade-up-right</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="fade-up-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">fade-up-left</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="fade-down-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">fade-down-right</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="fade-down-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">fade-down-left</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="flip-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">flip-up</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="flip-down" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">flip-down</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="flip-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">flip-left</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="flip-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">flip-right</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="slide-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">slide-up</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="slide-down" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">slide-down</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="slide-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">slide-left</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="slide-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">slide-right</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="zoom-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">zoom-in</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="zoom-in-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">zoom-in-up</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="zoom-in-down" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">zoom-in-down</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="zoom-in-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">zoom-in-left</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="zoom-in-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">zoom-in-right</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="zoom-out" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">zoom-out</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="zoom-out-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">zoom-out-up</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="zoom-out-down" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">zoom-out-down</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="zoom-out-left" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">zoom-out-left</div>
+            </div>
+            <div class="item col-xs-12  col-md-6 col-lg-6" data-aos="zoom-out-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false">
+              <div class="box-row">zoom-out-right</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <%= _.template(require('../includes/footer.html'))(data) %>
+  </article>
+</main>
+
+<%= _.template(require('../includes/footer.html'))(data) %>

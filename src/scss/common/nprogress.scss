@@ -1,0 +1,152 @@
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #29d;
+  position  : fixed;
+  z-index   : 1031;
+  top       : 0;
+  left      : 0;
+  width     : 100%;
+  height    : 2px;
+}
+/* Fancy blur effect */
+#nprogress .peg {
+  display          : block;
+  position         : absolute;
+  right            : 0;
+  width            : 100px;
+  height           : 100%;
+  box-shadow       : 0 0 10px #29d, 0 0 5px #29d;
+  opacity          : 1.0;
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform    : rotate(3deg) translate(0px, -4px);
+  transform        : rotate(3deg) translate(0px, -4px);
+}
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display : block;
+  position: fixed;
+  z-index : 1031;
+  top     : 15px;
+  right   : 15px;
+}
+
+#nprogress .spinner-icon {
+  width            : 18px;
+  height           : 18px;
+  box-sizing       : border-box;
+  border           : solid 2px transparent;
+  border-top-color : #29d;
+  border-left-color: #29d;
+  border-radius    : 50%;
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation        : nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .bar,
+.nprogress-custom-parent #nprogress .spinner {
+  position: absolute;
+}
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.page-animate {
+  // opacity   : 0;
+  // transition: opacity 0.4s;
+  &.page-animate-start {
+    opacity: 0;
+    // transition: opacity 0.4s;
+  }
+
+  &.page-animate-end {
+    opacity   : 1;
+    transition: opacity 0.4s;
+  }
+
+  &.page-animate-pause {
+    opacity: 1!important;
+  }
+}
+
+.loaders {
+  box-sizing        : border-box;
+  display           : -ms-flexbox;
+  display           : flex;
+  width             : 100%;
+  -ms-flex          : 0 1 auto;
+  flex              : 0 1 auto;
+  -ms-flex-direction: row;
+  flex-direction    : row;
+  -ms-flex-wrap     : wrap;
+  flex-wrap         : wrap;
+
+  .loader {
+    box-sizing             : border-box;
+    display                : -ms-flexbox;
+    display                : flex;
+    flex                   : 0 1 auto;
+    -ms-flex-direction     : column;
+    flex-direction         : column;
+    -ms-flex-positive      : 1;
+    flex-grow              : 1;
+    -ms-flex-negative      : 0;
+    flex-shrink            : 0;
+    -ms-flex-preferred-size: 25%;
+    flex-basis             : 25%;
+    max-width              : 25%;
+    height                 : 200px;
+    -ms-flex-align         : center;
+    align-items            : center;
+    -ms-flex-pack          : center;
+    justify-content        : center;
+    position               : fixed;
+    top                    : 50%;
+    left                   : 50%;
+    transform              : translate(-50%,-50%);
+  }
+}
+
+.ball-clip-rotate-multiple > div {
+  border-color: #4f72d6 transparent;
+  height      : 100px;
+  width       : 100px;
+  left        : -50px;
+  top         : -50px;
+  border-width: 3px;
+  animation   : rotate 2s 0s ease-in-out infinite;
+
+  &:last-child {
+    border-color       : #4f72d6 transparent;
+    height             : 50px;
+    width              : 50px;
+    left               : -25px;
+    top                : -25px;
+    border-width       : 3px;
+    animation          : rotate 2s 0s ease-in-out infinite;
+    animation-duration : 1s;
+    animation-direction: reverse;
+  }
+}

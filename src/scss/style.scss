@@ -4,13 +4,12 @@
 @import './includes/mixins';
 @import './includes/base';
 @import './includes/ui';
-@import './includes/modals';
-@import './includes/scrollbar';
-@import './includes/swiper';
-@import './includes/main';
-@import './includes/animate';
-@import '../js/package/photoswiper/photoswipe.css';
-@import '../js/package/photoswiper/default-skin/default-skin.css';
+@import './includes/swiper'; // @import '../js/package/photoswiper/photoswipe.css';
+// @import '../js/package/photoswiper/default-skin/default-skin.css';
+@import 'loaders.css/loaders.min.css';
+@import '/common/nprogress';
 @import './common/header';
 @import './common/footer';
 @import './page/index';
+@import 'aos/dist/aos.css';
+@import 'flexboxgrid/dist/flexboxgrid.min.css'
