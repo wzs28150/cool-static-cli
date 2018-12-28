@@ -17,7 +17,6 @@ a {
   background-color: gray;
 }
 /* alert_player */
-
 .alert_player {
   position: fixed;
   top     : 0;
@@ -63,6 +62,7 @@ a {
   }
 }
 /*文字省略号*/
+
 .text-hidden {
   display      : block;
   white-space  : nowrap;
@@ -70,6 +70,7 @@ a {
   text-overflow: ellipsis;
 }
 /*水平垂直居中*/
+
 .wh-center {
   display            : -webkit-box;
   display            : -ms-flexbox;
@@ -84,6 +85,7 @@ a {
   align-items        : center;
 }
 /*垂直居中*/
+
 .h-center {
   display            : -webkit-box;
   display            : -ms-flexbox;
@@ -95,6 +97,7 @@ a {
   align-items        : center;
 }
 /*分组父级*/
+
 .felx-box {
   display              : -webkit-box;
   -webkit-box-orient   : horizontal;
@@ -106,6 +109,7 @@ a {
   align-items          : left;
 }
 /*分组子级*/
+
 .felx-item {
   -webkit-box-flex: 1;
   flex-basis      : 1;
@@ -114,7 +118,6 @@ a {
   flex            : 1 1 1;
 }
 /*pc*/
-
 .pc {
   display: block!important;
   @media screen and (max-width: 768px) {
@@ -122,6 +125,7 @@ a {
   }
 }
 /*手机*/
+
 .wap {
   display: none!important;
   @media screen and (max-width: 768px) {
@@ -129,7 +133,6 @@ a {
   }
 }
 /*container*/
-
 .container {
   @include css-set($container-width);
   margin  : 0 auto;
@@ -283,6 +286,10 @@ strong {
 
 .code-lighter {
   margin: 10px 0;
+
+  .code {
+    overflow-x: scroll;
+  }
 }
 
 table {
