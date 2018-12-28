@@ -75,19 +75,23 @@
 
 .page-animate {
   // opacity   : 0;
+  // visibility: hidden;
   // transition: opacity 0.4s;
   &.page-animate-start {
-    opacity: 0;
+    opacity   : 0;
+    visibility: hidden;
     // transition: opacity 0.4s;
   }
 
   &.page-animate-end {
     opacity   : 1;
+    visibility: visible;
     transition: opacity 0.4s;
   }
 
   &.page-animate-pause {
-    opacity: 1!important;
+    opacity   : 1!important;
+    visibility: visible!important;
   }
 }
 
@@ -96,12 +100,18 @@
   display           : -ms-flexbox;
   display           : flex;
   width             : 100%;
+  height            : 100vh;
+  background-color  : #efefef;
   -ms-flex          : 0 1 auto;
   flex              : 0 1 auto;
   -ms-flex-direction: row;
   flex-direction    : row;
   -ms-flex-wrap     : wrap;
   flex-wrap         : wrap;
+  position          : fixed;
+  top               : 0;
+  left              : 0;
+  z-index           : 0;
 
   .loader {
     box-sizing             : border-box;

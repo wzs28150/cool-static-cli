@@ -12,7 +12,6 @@
 import debug from './debug/debug';
 import 'jquery-pjax/jquery.pjax.js';
 import NProgress from 'nprogress';
-
 import AOS from 'aos';
 
 
@@ -33,7 +32,7 @@ const exists = selector => ($(selector).length > 0);
  */
 const backtotop = () => {
   $('#backtotop').on('click', () => {
-    $('html,body').animate({
+    $('html,html').animate({
       scrollTop: '0' + 'px'
     }, 500);
     return false;
@@ -71,16 +70,18 @@ const navActive = (i) => {
  *  data-target string                 控制页面滚动到指定元素
  *  data-istop  bool    default  true  控制点击后页面是否滚动到顶部
  */
+
 const no_refresh = (main, callback) => {
+  let url = '';
+  let target = null;
+  let container = main;
+  let fragment = main;
+  let scrollTo = 0;
   $(document).off('click', 'a[data-nopjax!=no]').on('click', 'a[data-nopjax!=no]', function (event) {
     event.preventDefault();
 
-    const url = $(this).attr('href');
-    const target = $(this).data('target');
-    let container = main;
-    let fragment = main;
-    let scrollTo = 0;
-
+    url = $(this).attr('href');
+    target = $(this).data('target');
     if ($(this).data('main')) {
       container = $(this).data('main');
       fragment = $(this).data('main');
@@ -89,60 +90,88 @@ const no_refresh = (main, callback) => {
     if (!container) {
       container = 'main';
     }
-
     if (target) {
-      const scroll_offset = $(target).offset();
-      scrollTo = scroll_offset.top - $('header').height();
+
       if (exists('.page-animate')) {
         $('.page-animate').addClass('page-animate-pause');
       }
-    } else if (exists('.page-animate')) {
-      $('.page-animate').removeClass('page-animate-pause');
-    }
-    $.pjax({
-      url,
-      container,
-      fragment,
-      timeout: 8000,
-      scrollTo: false
-    });
-
-    $(document).off('pjax:complete').on('pjax:complete', () => {
-      $('body').getNiceScroll().resize();
-      $('body').getNiceScroll(0).doScrollTop(scrollTo);
-      // 页面加载进度条结束
-      NProgress.done();
-    });
-    $(document).off('pjax:send').on('pjax:send', (xhr, options) => {
-      //  页面进度条开始
-      NProgress.start();
-      // 页面动画
-      if (exists('.page-animate')) {
-        $('.page-animate').removeClass('page-animate-end').addClass('page-animate-start');
-      }
-    });
-
-    $(document).off('pjax:end').on('ready pjax:end', (data, options) => {
-      // $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
-      const target = $(data.target).children();
-      const controller = target.data('controller');
-      const action = target.data('action');
-      if (controller) {
-        if (action) {
-          callback(controller, action);
-        } else {
-          callback(controller, 'init');
-        }
-      } else {
-        callback();
-      }
-      if (exists('.page-animate')) {
+      if (url == window.location.pathname) {
+        const scroll_offset = $(target).offset();
+        scrollTo = scroll_offset.top - $('header').height();
         setTimeout(() => {
-          $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
-        }, 2000);
+          $('html').getNiceScroll(0).resize();
+        }, 1000);
+        $('html').getNiceScroll(0).doScrollTop(scrollTo);
+      } else {
+        $.pjax({
+          url,
+          container,
+          fragment,
+          timeout: 8000,
+          scrollTo: false
+        });
       }
-    });
+    } else {
+      if (exists('.page-animate')) {
+        $('.page-animate').removeClass('page-animate-pause');
+      }
+      $.pjax({
+        url,
+        container,
+        fragment,
+        timeout: 8000,
+        scrollTo: false
+      });
+    }
+
+
   });
+
+  $(document).off('pjax:start').on('pjax:start', (xhr, options) => {
+    //  页面进度条开始
+    NProgress.start();
+    // 页面动画
+    if (exists('.page-animate')) {
+      $('.page-animate').removeClass('page-animate-end').addClass('page-animate-start');
+    }
+  });
+
+  $(document).off('pjax:end').on('ready pjax:end', (data, options) => {
+    // $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
+    const target = $(data.target).children();
+    const controller = target.data('controller');
+    const action = target.data('action');
+    if (controller) {
+      if (action) {
+        callback(controller, action);
+      } else {
+        callback(controller, 'init');
+      }
+    } else {
+      callback();
+    }
+    if (exists('.page-animate')) {
+      setTimeout(() => {
+        $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
+      }, 1000);
+    }
+  });
+
+  $(document).off('pjax:complete').on('pjax:complete', () => {
+    if (target) {
+      const scroll_offset = $(target).offset();
+      scrollTo = scroll_offset.top - $('header').height();
+    } else {
+      scrollTo = 0;
+    }
+    $('html').getNiceScroll(0).doScrollTop(scrollTo);
+    setTimeout(() => {
+      $('html').getNiceScroll(0).resize();
+    }, 1000);
+    // 页面加载进度条结束
+    NProgress.done();
+  });
+
 };
 /**
  * 路由加载对应 控制器及方法
@@ -163,6 +192,8 @@ const router = (controller, action, state) => {
   }
 };
 
+
+
 const init = () => {
   console.log('%c meUi by wzs %c QQ:1003418012 %c github: %c https://github.com/wzs28150/cool-static-cli ', 'color: #fff; background:#41b883; padding:5px 0;', 'color: #fff; background: #35495e; padding:5px 0;', 'color: #fff; background:#41b883; padding:5px 0;', 'color: #fff; background: #fff; border:1px solid #35495e; padding:4px 0;');
   debug('页面监测开始:');
@@ -172,18 +203,26 @@ const init = () => {
     //   // stepSize: 50
     // })
     // 绑定滚动条到 main
-    $('body').niceScroll({
+    $('html').niceScroll({
       cursorcolor: '#065fe3',
       zindex: 10
     });
-    $('body').getNiceScroll().resize();
-    $('body').getNiceScroll(0).doScrollTop(0);
+    $('html').getNiceScroll(0).resize();
+    $('html').getNiceScroll(0).doScrollTop(0);
     AOS.init();
+    if (exists('.page-animate')) {
+      setTimeout(() => {
+        $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
+      }, 1000);
+    }
     router($('main').children().data('controller'), $('main').children().data('action') ? $('main').children().data('action') : 'init', false);
+
     no_refresh('main', (controller, action) => {
       router(controller, action, true);
       AOS.refresh();
       AOS.init();
+
+
     });
   });
 };

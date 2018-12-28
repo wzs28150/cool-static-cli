@@ -1,0 +1,102 @@
+.start {
+  section {}
+
+  .Advantage {
+    text-align: center;
+  }
+
+  .section {
+    margin  : 20px 0;
+    overflow: hidden;
+
+    .inner {
+      padding         : 20px;
+      background-color: #fff;
+
+      h2 {
+        // padding: 20px 20px 0;
+        margin-bottom: 20px;
+        @include css-set($h2);
+      }
+
+      .description {
+        margin-bottom: 20px;
+      }
+
+      .content {
+        line-height: 2em;
+
+        .code {
+          position    : relative;
+          padding-left: 10px;
+
+          &::before {
+            content         : "";
+            display         : block;
+            width           : 3px;
+            height          : 1.5em;
+            background-color: #007FFF;
+            position        : absolute;
+            left            : 0;
+            top             : 50%;
+            transform       : translateY(-50%);
+          }
+        }
+      }
+
+      .content2 {
+        line-height: 1.5em;
+      }
+    }
+  }
+
+  .section4 {
+    h2 {
+      // padding: 0 0 20px;
+    }
+
+    .row {
+      .box-row {
+        position     : relative;
+        box-sizing   : border-box;
+        min-height   : 1rem;
+        margin-bottom: 0;
+        background   : #007FFF;
+        border       : 1px solid #FFF;
+        border-radius: 2px;
+        overflow     : hidden;
+        text-align   : center;
+        color        : #fff;
+        margin-bottom: 1rem;
+        padding      : 1rem;
+      }
+    }
+  }
+
+  .section5 {
+    .row {
+      .item {
+        .box-row {
+          background-color       : #007FFF;
+          color                  : #fff;
+          height                 : 200px;
+          margin-bottom          : 1rem;
+          text-align             : center;
+          font-size              : 18px;
+          display                : -webkit-box;
+          display                : -ms-flexbox;
+          display                : -webkit-flex;
+          display                : flex;
+          -webkit-box-pack       : center;
+          -ms-flex-pack          : center;
+          -webkit-justify-content: center;
+          justify-content        : center;
+          -webkit-box-align      : center;
+          -ms-flex-align         : center;
+          -webkit-align-items    : center;
+          align-items            : center;
+        }
+      }
+    }
+  }
+}

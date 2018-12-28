@@ -4,4 +4,6 @@ footer {
   line-height     : 60px;
   color           : #fff;
   transition      : $tr4;
+  position        : relative;
+  z-index         : 1;
 }

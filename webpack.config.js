@@ -29,7 +29,7 @@ const htmlPlugins = generateHtmlPlugins('./src/html/views');
 module.exports = {
   entry: ['./src/js/index.js', './src/scss/style.scss'],
   output: {
-    filename: './js/meUi.js'
+    filename: './js/cooljs.js'
   },
   devtool: 'source-map',
   module: {
@@ -99,7 +99,7 @@ module.exports = {
       }
     }),
     new ExtractTextPlugin({
-      filename: './css/style.bundle.css',
+      filename: './css/coolstyle.css',
       allChunks: true
     }),
     new CleanWebpackPlugin(['dist']),
@@ -137,6 +137,6 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    disableHostCheck:true
+    disableHostCheck: true
   }
 };
