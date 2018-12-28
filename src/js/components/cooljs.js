@@ -164,6 +164,10 @@ const no_refresh = (main, callback) => {
     } else {
       scrollTo = 0;
     }
+
+    if ($('#navshow').is(':checked')) {
+      $('#navshow').removeAttr("checked");
+    }
     $('html').getNiceScroll(0).doScrollTop(scrollTo);
     setTimeout(() => {
       $('html').getNiceScroll(0).resize();
