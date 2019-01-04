@@ -166,17 +166,19 @@
       //页面跳转不回到顶部
       <a data-istop="no" href="/index.html">首页</a>
       //跳转到index.html 并滚动到id为section1的元素的所在位置
-      <a data-target="#section1" data-istop="no" href="/index.html">首页</a> </div></pre>
+      <a data-target="#section1" data-istop="no" href="/index.html">首页</a>
+      //跳转到当前页id为section1的元素的所在位置
+      <a data-target="#section1" data-jump="no" href="/index.html">首页</a> </div></pre>
               </div>
             </div>
           </section>
         </section>
         <aside class="page-right col-xs-12  col-lg-2">
           <ul>
-            <li><a href="start.html" data-target="#section1">安装</a></li>
-            <li><a href="start.html" data-target="#section2">运行</a></li>
-            <li><a href="start.html" data-target="#section3">结构</a></li>
-            <li><a href="start.html" data-target="#section4">方法</a></li>
+            <li><a href="start.html" data-jump="no" data-target="#section1">安装</a></li>
+            <li><a href="start.html" data-jump="no" data-target="#section2">运行</a></li>
+            <li><a href="start.html" data-jump="no" data-target="#section3">结构</a></li>
+            <li><a href="start.html" data-jump="no" data-target="#section4">方法</a></li>
           </ul>
         </aside>
       </div>
@@ -185,7 +187,7 @@
 
   <footer>
     <div class="container">
-      <span class="fl">技术支持:酷创网络</span>
+      <span class="fl">技术支持:<a data-ajax="no" href="http://www.hrbkcwl.com/">酷创网络</a></span>
       <span class="fr">© 2019 cool Ltd. all right</span>
     </div>
   </footer>

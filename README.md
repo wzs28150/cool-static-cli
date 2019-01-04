@@ -49,7 +49,8 @@
 
 ```
 
-更新计划:
+### 更新计划:
+
 1.优化pjax + router
 2.优化滚动条 使用nicescroll  https://github.com/inuyaksa/jquery.nicescroll
 3.优化页面滚动动画 增加 aoc  https://github.com/michalsnik/aos

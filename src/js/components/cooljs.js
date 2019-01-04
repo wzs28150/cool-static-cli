@@ -77,11 +77,12 @@ const no_refresh = (main, callback) => {
   let container = main;
   let fragment = main;
   let scrollTo = 0;
+  let jump = 'yes';
   $(document).off('click', 'a[data-nopjax!=no]').on('click', 'a[data-nopjax!=no]', function (event) {
     event.preventDefault();
-
     url = $(this).attr('href');
     target = $(this).data('target');
+    jump = $(this).data('jump');
     if ($(this).data('main')) {
       container = $(this).data('main');
       fragment = $(this).data('main');
@@ -91,14 +92,10 @@ const no_refresh = (main, callback) => {
       container = 'main';
     }
     if (target) {
-
       if (exists('.page-animate')) {
         $('.page-animate').addClass('page-animate-pause');
       }
-      let pathname = window.location.pathname;
-      pathname = pathname.substr(pathname.lastIndexOf("/")+1);
-      console.log(pathname+'/'+url);
-      if (url == pathname) {
+      if (jump == 'no') {
         const scroll_offset = $(target).offset();
         scrollTo = scroll_offset.top - $('header').height();
         setTimeout(() => {

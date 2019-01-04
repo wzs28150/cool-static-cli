@@ -6,4 +6,8 @@ footer {
   transition      : $tr4;
   position        : relative;
   z-index         : 1;
+
+  a {
+    color: #fff;
+  }
 }

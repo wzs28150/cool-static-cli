@@ -95,31 +95,36 @@
               <p>&nbsp;&nbsp;&nbsp;&nbsp;在每个页面article上添加data-controller="" 如:data-controller="index",这样在页面无刷新加载页面后能加载对应js里的方法内容</p>
               <strong>2.&nbsp;设置页面方法</strong>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;在每个页面article上添加data-action="" 如:data-controller="init",不设置为默认方法init,这样在页面无刷新加载页面后能执行对应控制器的对应方法</p>
-              <strong>3.&nbsp;页面基础</strong><pre class="content2"><div codelighter='html'>      <main class="main page-animate"><article class="index" data-controller="index"></article></main></div></pre><strong>4.&nbsp;控制器基础</strong><pre  class="content2"><div codelighter='javascript'>      const init = (callback) => {
+              <strong>3.&nbsp;页面基础</strong>
+              <pre class="content2"><div codelighter='html'>      <main class="main page-animate"><article class="index" data-controller="index"></article></main></div></pre><strong>4.&nbsp;控制器基础</strong>
+              <pre class="content2"><div codelighter='javascript'>      const init = (callback) => {
         callback(1);
         debug('page is load');
       };
       const index = {
         init: init
       };
-      export default index;</div></pre><strong>4.&nbsp;链接设置</strong><pre><div codelighter='html'>      //正常无刷新链接
+      export default index;</div></pre><strong>4.&nbsp;链接设置</strong>
+              <pre><div codelighter='html'>      //正常无刷新链接
       <a href="/index.html">首页</a>
       //正常刷新链接用于站外跳转
       <a data-ajax="no" href="/index.html">首页</a>
       //页面跳转不回到顶部
       <a data-istop="no" href="/index.html">首页</a>
       //跳转到index.html 并滚动到id为section1的元素的所在位置
-      <a data-target="#section1" data-istop="no" href="/index.html">首页</a> </div></pre>
+      <a data-target="#section1" data-istop="no" href="/index.html">首页</a>
+      //跳转到当前页id为section1的元素的所在位置
+      <a data-target="#section1" data-jump="no" href="/index.html">首页</a> </div></pre>
             </div>
           </div>
         </section>
       </section>
       <aside class="page-right col-xs-12  col-lg-2">
         <ul>
-          <li><a href="/start.html" data-target="#section1">安装</a></li>
-          <li><a href="/start.html" data-target="#section2">运行</a></li>
-          <li><a href="/start.html" data-target="#section3">结构</a></li>
-          <li><a href="/start.html" data-target="#section4">方法</a></li>
+          <li><a href="start.html" data-jump="no" data-target="#section1">安装</a></li>
+          <li><a href="start.html" data-jump="no" data-target="#section2">运行</a></li>
+          <li><a href="start.html" data-jump="no" data-target="#section3">结构</a></li>
+          <li><a href="start.html" data-jump="no" data-target="#section4">方法</a></li>
         </ul>
       </aside>
     </div>
