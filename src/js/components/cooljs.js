@@ -201,6 +201,9 @@ const router = (controller, action, state) => {
 const init = () => {
   console.log('%c meUi by wzs %c QQ:1003418012 %c github: %c https://github.com/wzs28150/cool-static-cli ', 'color: #fff; background:#41b883; padding:5px 0;', 'color: #fff; background: #35495e; padding:5px 0;', 'color: #fff; background:#41b883; padding:5px 0;', 'color: #fff; background: #fff; border:1px solid #35495e; padding:4px 0;');
   debug('页面监测开始:');
+  document.oncontextmenu = function () {
+    return false;
+  }
   $(() => {
     // 不使用滚动条时开启
     // SmoothScroll({
