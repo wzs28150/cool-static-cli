@@ -97,6 +97,7 @@ const no_refresh = (main, callback) => {
       }
       let pathname = window.location.pathname;
       pathname = pathname.substr(pathname.lastIndexOf("/")+1);
+      console.log(pathname+'/'+url);
       if (url == pathname) {
         const scroll_offset = $(target).offset();
         scrollTo = scroll_offset.top - $('header').height();
