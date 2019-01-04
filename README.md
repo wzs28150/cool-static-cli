@@ -57,4 +57,4 @@
 
 ~~3.优化页面滚动动画 增加 aoc  https://github.com/michalsnik/aos~~
 
-4.增加 Parallax  Scrolling http://pixelcog.github.io/parallax.js/
+~~4.增加 Parallax  Scrolling http://pixelcog.github.io/parallax.js/~~
