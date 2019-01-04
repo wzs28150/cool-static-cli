@@ -2,8 +2,9 @@
 import debug from '../components/debug/debug';
 import Headroom from 'headroom';
 import lighter from '../components/code-lighter/code-lighter';
-import parallax from '../components/parallax/parallax.min.js';
-
+// import parallax from '../components/parallax/parallax.min.js';
+// import paroller from '../components/parallax/paroller.js';
+import rallax from 'rallax.js'
 // 右侧导航 滚动定位
 const fixed = () => {
   var myElement = document.querySelector(".page-right");
@@ -41,7 +42,10 @@ const init = (callback) => {
   };
   lighter.auto(option);
   // 视差背景
-  $('.parallax-window').parallax({zIndex:2});
+  // $('.parallax-window').parallax({zIndex:2});
+  // $('.parallax-window').paroller();
+  const parallax = rallax('.parallax-window');
+  parallax.start();
 };
 
 const start = {
