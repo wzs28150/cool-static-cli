@@ -62,7 +62,7 @@ const minHeight = () => {
 const navActive = (i) => {
   $('nav a').removeClass('on');
   $('nav a').eq(i).addClass('on');
-}
+};
 /**
  * 无刷新控制开始
  *  a 标签 设置 :
@@ -96,7 +96,7 @@ const no_refresh = (main, callback) => {
         $('.page-animate').addClass('page-animate-pause');
       }
       let pathname = window.location.pathname;
-      pathname.substr(pathname.lastIndexOf("/")+1);
+      pathname = pathname.substr(pathname.lastIndexOf("/")+1);
       if (url == pathname) {
         const scroll_offset = $(target).offset();
         scrollTo = scroll_offset.top - $('header').height();
