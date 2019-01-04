@@ -19,6 +19,30 @@
       text-shadow   : 0 0 10px #ccc;
       @include css-set($p);
     }
+
+    .btn {
+      margin    : 0 auto;
+      text-align: center;
+      font-size : 0;
+    }
+
+    .start-btn {
+      display      : inline-block;
+      padding      : 0.8rem 2rem;
+      color        : #fff;
+      border       : 1px solid #fff;
+      border-radius: 4px;
+      font-size    : 18px;
+      margin       : 0 20px;
+      transition   : $tr4;
+
+      &.on,
+      &:hover {
+        color           : #007fff;
+        background-color: #fff;
+        transition      : $tr4;
+      }
+    }
   }
 
   .Advantage {

@@ -1,6 +1,8 @@
-import debug from '../components/debug/debug'
+ /* jshint esversion: 6 */
+import debug from '../components/debug/debug';
 import Headroom from 'headroom';
-import lighter from '../components/code-lighter/code-lighter'
+import lighter from '../components/code-lighter/code-lighter';
+import parallax from '../components/parallax/parallax.min.js';
 
 // 右侧导航 滚动定位
 const fixed = () => {
@@ -27,17 +29,19 @@ const fixed = () => {
   });
   // initialise
   headroom.init();
-}
+};
 const init = (callback) => {
   callback(2);
   debug('components controller is load');
-  fixed()
-
+  fixed();
+  // 代码高亮
   var option = {
     tabSpace: 0,
     style: 'light'
-  }
+  };
   lighter.auto(option);
+  // 视差背景
+  $('.parallax-window').parallax({zIndex:2});
 };
 
 const start = {

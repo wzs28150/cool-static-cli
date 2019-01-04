@@ -51,6 +51,12 @@
       .content2 {
         line-height: 1.5em;
       }
+
+      .parallax-window {
+        height  : 500px;
+        position: relative;
+        z-index : 2;
+      }
     }
   }
 
