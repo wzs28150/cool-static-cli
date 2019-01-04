@@ -56,6 +56,33 @@
         height  : 500px;
         position: relative;
         z-index : 2;
+
+        h2 {
+          position      : absolute;
+          z-index       : 2;
+          width         : 100%;
+          top           : 50%;
+          left          : 0;
+          transform     : translateY(-50%);
+          text-align    : center;
+          color         : #fff;
+          letter-spacing: 5px;
+          text-shadow   : 0 0 5px #fff;
+        }
+
+        .parallax {
+          background-position  : center;
+          background-size      : cover;
+          background-attachment: fixed;
+          background-repeat    : no-repeat;
+          margin               : 0;
+          height               : 500px;
+          position             : absolute;
+          top                  : 0;
+          left                 : 0;
+          width                : 100%;
+          z-index              : 1;
+        }
       }
     }
   }
