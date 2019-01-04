@@ -3,6 +3,7 @@ import debug from '../components/debug/debug';
 import Headroom from 'headroom';
 import lighter from '../components/code-lighter/code-lighter';
 import '../components/parallax/jquery.scrolly.js';
+import Swiper from 'swiper';
 
 // import parallax from '../components/parallax/parallax.min.js';
 // import paroller from '../components/parallax/paroller.js';
@@ -46,6 +47,16 @@ const init = (callback) => {
 
   $('.parallax').scrolly({
     bgParallax: true
+  });
+
+  var swiper = new Swiper('.swiper-demo', {
+    pagination: '.swiper-demo .swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-demo .swiper-button-next',
+    prevButton: '.swiper-demo .swiper-button-prev',
+    parallax: true,
+    speed: 2000,
+    autoplay: 2000
   });
 
   // 视差背景

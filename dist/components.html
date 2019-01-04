@@ -115,11 +115,91 @@
           </section>
           <section class="section section5" id="section2">
             <div class="inner">
+              <h2>图片轮播插件 swiper</h2>
+              <p class='description'><a data-ajax="no" href="https://github.com/pixelcog/parallax.js/">官方文档&nbsp;:&nbsp;&nbsp;https://www.swiper.com.cn//</a></p>
+              <h3>示例:</h3>
+              <p>&nbsp;</p>
+              <p>html代码</p>
+              <pre class="content2"><div codelighter='html'>  <div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
+</div></div></pre>
+              <p>引入方式</p>
+              <pre class="content2"><div codelighter='javascript'>  import Swiper from 'swiper';</div></pre>
+              <p>js代码</p>
+              <pre class="content2"><div codelighter='javascript'>  var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'vertical',
+    loop: true,
+
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+
+    // 如果需要滚动条
+    scrollbar: '.swiper-scrollbar',
+  })        </div></pre>
+              <div class="swiper-container swiper-demo">
+                <div class="parallax-bg" style="background-image:url(img/Parallax.jpg)" data-swiper-parallax="-23%"></div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="title" data-swiper-parallax="-100">Slide 1</div>
+                    <div class="subtitle" data-swiper-parallax="-500">Subtitle</div>
+                    <div class="text" data-swiper-parallax="-1000">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit
+                        suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="title" data-swiper-parallax="-100">Slide 2</div>
+                    <div class="subtitle" data-swiper-parallax="-500">Subtitle</div>
+                    <div class="text" data-swiper-parallax="-1000">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit
+                        suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="title" data-swiper-parallax="-100">Slide 3</div>
+                    <div class="subtitle" data-swiper-parallax="-500">Subtitle</div>
+                    <div class="text" data-swiper-parallax="-1000">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit
+                        suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination swiper-pagination-white"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-prev swiper-button-white"></div>
+                <div class="swiper-button-next swiper-button-white"></div>
+              </div>
+            </div>
+          </section>
+          <section class="section section5" id="section3">
+            <div class="inner">
               <h2>滚动视差背景动画 parallax</h2>
               <p class='description'><a data-ajax="no" href="https://github.com/pixelcog/parallax.js/">官方文档&nbsp;:&nbsp;&nbsp;https://github.com/pixelcog/parallax.js/</a></p>
               <h3>示例:</h3>
+              <p>&nbsp;</p>
+              <p>html代码</p>
               <pre class="content2"><div codelighter='html'>  <div class="parallax" data-velocity="-.3"></div></div></pre>
+              <p>引入方式</p>
               <pre class="content2"><div codelighter='javascript'>  import '../components/parallax/jquery.scrolly.js';</div></pre>
+              <p>js代码</p>
               <pre class="content2"><div codelighter='javascript'>  $('.parallax').scrolly({
     bgParallax: true
   });</div></pre>
@@ -129,7 +209,7 @@
               </div>
             </div>
           </section>
-          <section class="section section5" id="section3">
+          <section class="section section5" id="section4">
             <div class="inner">
               <h2>滚动加载动画 AOS</h2>
               <p class='description'><a data-ajax="no" href="http://michalsnik.github.io/aos/">官方文档&nbsp;:&nbsp;&nbsp;http://michalsnik.github.io/aos/</a></p>
@@ -282,8 +362,9 @@
         <aside class="page-right col-xs-12  col-lg-2">
           <ul>
             <li><a href="components.html" data-jump="no" data-target="#section1">栅格</a></li>
-            <li><a href="components.html" data-jump="no" data-target="#section2">视差背景</a></li>
-            <li><a href="components.html" data-jump="no" data-target="#section3">滚动动画</a></li>
+            <li><a href="components.html" data-jump="no" data-target="#section2">swiper</a></li>
+            <li><a href="components.html" data-jump="no" data-target="#section3">视差背景</a></li>
+            <li><a href="components.html" data-jump="no" data-target="#section4">滚动动画</a></li>
           </ul>
         </aside>
       </div>
