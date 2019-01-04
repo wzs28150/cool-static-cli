@@ -95,7 +95,9 @@ const no_refresh = (main, callback) => {
       if (exists('.page-animate')) {
         $('.page-animate').addClass('page-animate-pause');
       }
-      if (url == window.location.pathname) {
+      let pathname = window.location.pathname;
+      pathname.substr(pathname.lastIndexOf("/")+1);
+      if (url == pathname) {
         const scroll_offset = $(target).offset();
         scrollTo = scroll_offset.top - $('header').height();
         setTimeout(() => {
