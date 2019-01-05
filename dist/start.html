@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" type="image/png" href="favicon/favicon.png">
+  <link rel="stylesheet" href="css/coolstyle.css">
+
+  <title>
+    起步-cool web
+  </title>
+</head>
+
+<body>
+  <!-- 弹窗 -->
+  <div class="alert_player" style="display:none;">
+    <div class="bg"></div>
+    <div class="layer">
+      <div class="info"></div>
+      <a class="queren_btn" data-ajax="no">确认</a>
+    </div>
+  </div>
+  <!-- 弹窗 -->
+  <input type="checkbox" id="navshow">
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h2>cool web</h2>
+      </div>
+      <nav>
+        <a href="index.html">首页</a>
+        <a href="start.html">起步</a>
+        <a href="components.html">组件</a>
+        <a data-ajax="no" href="javascript:void(0);">案例</a>
+        <iframe src="https://ghbtns.com/github-btn.html?user=wzs28150&repo=cool-static-cli&type=star&count=false&size=large" frameborder="0" scrolling="0" width="75px" height="30px" style="margin-top:15px; float:right;"></iframe>
+      </nav>
+      <label for="navshow" class="navbar wap">
+        <div class="menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"> </div>
+        </div>
+      </label>
+      <div class="shadow wap"></div>
+    </div>
+  </header>
+
+  <div class="loaders">
+    <div class="loader">
+      <div class="ball-clip-rotate-multiple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main page-animate">
+    <article class="start" data-controller="start">
+      <section class="er-banner">
+        <div class="container " style="">
+          <h1>起步</h1>
+          <p>简要介绍 cool web，以及如何下载、使用，还有基本目录结构和模板，等等。</p>
+        </div>
+      </section>
+      <div class="row page container">
+        <section class="page-left col-xs-12  col-lg-10">
+          <section class="section" id="section1">
+            <div class="inner">
+              <h2>使用 cli 安装 方便快捷</h2>
+              <!-- <p class="description">Easy and fast installation with cli</p> -->
+              <div class="content">
+                <h4>开始安装&nbsp;&nbsp;start:</h4>
+                <div class="code">npm i cool-static-cli -g</div>
+                <h4>初始化&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init:</h4>
+                <div class="code">mkdir project && cd project</div>
+                <div class="code">cool-static-cli init</div>
+                <div class="code">npm i</div>
+              </div>
+            </div>
+          </section>
+          <section class="section" id="section2">
+            <div class="inner">
+              <h2>采用 webpack4 开发环境 </h2>
+              <!-- <p class="description">Using webpack4 development environment</p> -->
+              <div class="content">
+                <h4>开发运行&nbsp;&nbsp;&nbsp;&nbsp;dev:</h4>
+                <div class="code">npm run dev</div>
+                <div>浏览器输入:http://localhost:8080即可预览页面</div>
+                <h4>打包发布&nbsp;&nbsp;build:</h4>
+                <div class="code">npm run build</div>
+              </div>
+            </div>
+          </section>
+          <section class="section" id="section3">
+            <div class="inner">
+              <h2>目录结构</h2>
+              <div class="content content2">
+                <pre><div codelighter='javascript'>      .
+      +-- dist(Publish directory)
+      |
+      +-- src(Development Directory)
+      |   +-- favicon
+      |   +-- fonts (页面字体)
+      |   +-- html
+      |   |   +-- include (可引用的页面碎片)
+      |   |   |   +-- header.html (公共头部)
+      |   |   |   +-- footer.html (公共底部)
+      |   |   +-- views
+      |   |   |   +-- index.html (首页)
+      |   +-- img
+      |   +-- js
+      |   |   +-- package (存放不能用webpack导入的jquery组件,以及一些自定义组件)
+      |   |   |   +-- nicescroll (页面滚动条组件)
+      |   |   |   +-- debug (页面debug组件,方便测试js,也可以随时关闭)
+      |   |   |   +-- photoswiper (一个很好用的图片放大组件支持手机)
+      |   |   |   +-- cooljs.js (核心组件预处理页面滚动及页面控制器方法的加载)
+      |   |   +-- page
+      |   |   |   +-- index.js (首页js)
+      |   |   +-- index.js
+      |   +-- media (存放如mp4,mp3等媒体文件)
+      |   +-- scss (css预处理)
+      |   |   +-- common (页面公共部分和碎片的样式)
+      |   |   |   +-- footer.scss (页面底部样式表)
+      |   |   |   +-- header.scss (页面头部样式表)
+      |   |   |   +-- nprogress.scss (页面加载进度条 页面切换 页面loading动画 样式表)
+      |   |   +-- include
+      |   |   |   +-- base.scss (基础样式表)
+      |   |   |   +-- fonts.scss (字体样式表)
+      |   |   |   +-- mixins.scss (一些函数)
+      |   |   |   +-- swiper.scss (swiper样式表)
+      |   |   |   +-- swiper.scss (页面ui样式表)
+      |   |   |   +-- vars.scss (一些变量参数)
+      |   |   +-- page
+      |   |   |   +-- index.scss (首页样式表)
+      |   |   +-- style.scss (样式表入口)
+      +-- webpack.config.js
+      +-- postcss.config.js
+      +-- package.json</div></pre>
+              </div>
+            </div>
+          </section>
+          <section class="section" id="section4">
+            <div class="inner">
+              <h2>控制器与方法</h2>
+              <div class="content">
+                <strong>1.&nbsp;设置页面控制器</strong>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;在每个页面article上添加data-controller="" 如:data-controller="index",这样在页面无刷新加载页面后能加载对应js里的方法内容</p>
+                <strong>2.&nbsp;设置页面方法</strong>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;在每个页面article上添加data-action="" 如:data-controller="init",不设置为默认方法init,这样在页面无刷新加载页面后能执行对应控制器的对应方法</p>
+                <strong>3.&nbsp;页面基础</strong>
+                <pre class="content2"><div codelighter='html'>      <main class="main page-animate"><article class="index" data-controller="index"></article></main></div></pre><strong>4.&nbsp;控制器基础</strong>
+                <pre class="content2"><div codelighter='javascript'>      const init = (callback) => {
+        callback(1);
+        debug('page is load');
+      };
+      const index = {
+        init: init
+      };
+      export default index;</div></pre><strong>4.&nbsp;链接设置</strong>
+                <pre><div codelighter='html'>      //正常无刷新链接
+      <a href="/index.html">首页</a>
+      //正常刷新链接用于站外跳转
+      <a data-ajax="no" href="/index.html">首页</a>
+      //页面跳转不回到顶部
+      <a data-istop="no" href="/index.html">首页</a>
+      //跳转到index.html 并滚动到id为section1的元素的所在位置
+      <a data-target="#section1" data-istop="no" href="/index.html">首页</a>
+      //跳转到当前页id为section1的元素的所在位置
+      <a data-target="#section1" data-jump="no" href="/index.html">首页</a> </div></pre>
+              </div>
+            </div>
+          </section>
+        </section>
+        <aside class="page-right col-xs-12  col-lg-2">
+          <ul>
+            <li><a href="start.html" data-jump="no" data-target="#section1">安装</a></li>
+            <li><a href="start.html" data-jump="no" data-target="#section2">运行</a></li>
+            <li><a href="start.html" data-jump="no" data-target="#section3">结构</a></li>
+            <li><a href="start.html" data-jump="no" data-target="#section4">方法</a></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span class="fl">技术支持:<a data-ajax="no" href="http://www.hrbkcwl.com/">酷创网络</a></span>
+      <span class="fr">© 2019 cool Ltd. all right</span>
+    </div>
+  </footer>
+  <script src="js/cooljs.js"></script>
+</body>
+
+</html>
