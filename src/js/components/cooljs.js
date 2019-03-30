@@ -183,18 +183,18 @@ const no_refresh = (main, callback) => {
  * action     方法     默认init  string
  * state      判断是否为无刷新加载  bool
  */
-const router = (controller, action, state) => {
-  if (controller) {
-    if (controller && localStorage.controller && localStorage.controller == controller && state) {
-
-    } else {
-      const controllerjs = require(`../page/${controller}`);
-      const str = `controllerjs.default.${action}(function(a){navActive(a);})`;
-      eval(str);
-      localStorage.controller = controller;
-    }
-  }
-};
+// const router = (controller, action, state) => {
+//   if (controller) {
+//     if (controller && localStorage.controller && localStorage.controller == controller && state) {
+//
+//     } else {
+//       const controllerjs = require(`../page/${controller}`);
+//       const str = `controllerjs.default.${action}(function(a){navActive(a);})`;
+//       eval(str);
+//       localStorage.controller = controller;
+//     }
+//   }
+// };
 
 
 
@@ -222,10 +222,10 @@ const init = () => {
         $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
       }, 1000);
     }
-    router($('main').children().data('controller'), $('main').children().data('action') ? $('main').children().data('action') : 'init', false);
+    // router($('main').children().data('controller'), $('main').children().data('action') ? $('main').children().data('action') : 'init', false);
 
     no_refresh('main', (controller, action) => {
-      router(controller, action, true);
+      // router(controller, action, true);
       AOS.refresh();
       AOS.init();
 

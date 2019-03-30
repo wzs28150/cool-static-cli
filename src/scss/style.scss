@@ -5,6 +5,7 @@
 @import './includes/fonts';
 @import './includes/mixins';
 @import './includes/base';
+@import './includes/mp';
 @import './includes/ui';
 @import './includes/swiper';
 @import 'aos/dist/aos.css';
@@ -13,8 +14,8 @@
 @import '/common/nprogress';
 @import './common/header';
 @import './common/footer';
-@import '../js/components/code-lighter/code-lighter';
-@import './page/index';
-@import './page/start';
-@import 'cropperjs/dist/cropper.css';
-@import './page/components';
+// @import '../js/components/code-lighter/code-lighter';
+// @import './page/index';
+// @import './page/start';
+// @import 'cropperjs/dist/cropper.css';
+// @import './page/components';

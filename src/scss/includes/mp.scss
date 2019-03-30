@@ -1,0 +1,154 @@
+@for $i from 1 through 10 {
+  .m_#{$i}0 {
+    margin: #{$i}0px !important;
+  }
+
+  .m_T#{$i}0 {
+    margin-top: #{$i}0px !important;
+  }
+
+  .m_B#{$i}0 {
+    margin-bottom: #{$i}0px !important;
+  }
+
+  .m_L#{$i}0 {
+    margin-left: #{$i}0px !important;
+  }
+
+  .m_R#{$i}0 {
+    margin-right: #{$i}0px !important;
+  }
+
+  .p_#{$i}0 {
+    padding: #{$i}0px !important;
+  }
+
+  .p_T#{$i}0 {
+    padding-top: #{$i}0px !important;
+  }
+
+  .p_B#{$i}0 {
+    padding-bottom: #{$i}0px !important;
+  }
+
+  .p_L#{$i}0 {
+    padding-left: #{$i}0px !important;
+  }
+
+  .p_R#{$i}0 {
+    padding-right: #{$i}0px !important;
+  }
+}
+
+
+@for $i from 1 through 9 {
+  .m_#{$i} {
+    margin: #{$i}px !important;
+  }
+
+  .m_T#{$i} {
+    margin-top: #{$i}px !important;
+  }
+
+  .m_B#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+
+  .m_L#{$i} {
+    margin-left: #{$i}px !important;
+  }
+
+  .m_R#{$i} {
+    margin-right: #{$i}px !important;
+  }
+
+  .p_#{$i} {
+    padding: #{$i}px !important;
+  }
+
+  .p_T#{$i} {
+    padding-top: #{$i}px !important;
+  }
+
+  .p_B#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+
+  .p_L#{$i} {
+    padding-left: #{$i}px !important;
+  }
+
+  .p_R#{$i} {
+    padding-right: #{$i}px !important;
+  }
+}
+
+.mn {
+  margin: 0;
+}
+
+.mTn {
+  margin-top: 0 !important;
+}
+
+.mBn {
+  margin-bottom: 0 !important;
+}
+
+.mRn {
+  margin-right: 0 !important;
+}
+
+.mLn {
+  margin-left: 0 !important;
+}
+
+.pn {
+  padding: 0;
+}
+
+.pTn {
+  padding-top: 0 !important;
+}
+
+.pBn {
+  padding-bottom: 0 !important;
+}
+
+.pRn {
+  padding-right: 0 !important;
+}
+
+.pLn {
+  padding-left: 0 !important;
+}
+
+.bLn {
+  border-left: none !important;
+}
+
+.bRn {
+  border-right: none !important;
+}
+
+.bBn {
+  border-bottom: none !important;
+}
+
+.bTn {
+  border-top: none !important;
+}
+
+.m_B7 {
+  margin-bottom: 0.4375rem !important;
+}
+
+@for $i from 1 through 5 {
+  .br#{$i} {
+    border-radius: #{$i}px;
+  }
+}
+
+.br100 {
+  border-radius: 100px;
+}
