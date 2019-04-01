@@ -9,7 +9,6 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const fs = require('fs');
 const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
   return templateFiles.map((item) => {
@@ -32,6 +31,9 @@ module.exports = {
     filename: './js/cooljs.js'
   },
   devtool: 'source-map',
+  externals: {
+    jquery: 'jQuery'
+  },
   module: {
     rules: [{
         test: /\.js$/,
@@ -49,6 +51,7 @@ module.exports = {
           }
         ]
       },
+    
       {
         test: /\.(sass|scss)$/,
         include: path.resolve(__dirname, 'src/scss'),
@@ -111,6 +114,10 @@ module.exports = {
         from: './src/media',
         to: './media'
       },
+      // {
+      //   from: './src/js/page',
+      //   to: './js/page'
+      // },
       {
         from: './src/favicon',
         to: './favicon'

@@ -1,0 +1,44 @@
+$height: 140px;
+$width: 220px;
+
+.news-pic-item {
+  overflow: hidden;
+
+  a {
+    position  : relative;
+    display   : block;
+    min-height: $height;
+
+    .pic {
+      width   : $width;
+      height  : $height;
+      position: absolute;
+      left    : 0;
+      top     : 0;
+    }
+
+    .inner {
+      padding-left: $width + 15;
+      overflow    : hidden;
+
+      .title {}
+
+      .des {
+        line-height: 1.5em;
+      }
+    }
+  }
+}
+
+.news-item {
+  a {
+    display : block;
+    position: relative;
+
+    span {
+      position: absolute;
+      right   : 0;
+      top     : 0;
+    }
+  }
+}

@@ -1,46 +1,44 @@
-@for $i from 1 through 10 {
-  .m_#{$i}0 {
-    margin: #{$i}0px !important;
+@for $i from 1 through 20 {
+  .m_#{$i*5} {
+    margin: #{$i*5}px !important;
   }
 
-  .m_T#{$i}0 {
-    margin-top: #{$i}0px !important;
+  .m_T#{$i*5} {
+    margin-top: #{$i*5}px !important;
   }
 
-  .m_B#{$i}0 {
-    margin-bottom: #{$i}0px !important;
+  .m_B#{$i*5} {
+    margin-bottom: #{$i*5}px !important;
   }
 
-  .m_L#{$i}0 {
-    margin-left: #{$i}0px !important;
+  .m_L#{$i*5} {
+    margin-left: #{$i*5}px !important;
   }
 
-  .m_R#{$i}0 {
-    margin-right: #{$i}0px !important;
+  .m_R#{$i*5} {
+    margin-right: #{$i*5}px !important;
   }
 
-  .p_#{$i}0 {
-    padding: #{$i}0px !important;
+  .p_#{$i*5} {
+    padding: #{$i*5}px !important;
   }
 
-  .p_T#{$i}0 {
-    padding-top: #{$i}0px !important;
+  .p_T#{$i*5} {
+    padding-top: #{$i*5}px !important;
   }
 
-  .p_B#{$i}0 {
-    padding-bottom: #{$i}0px !important;
+  .p_B#{$i*5} {
+    padding-bottom: #{$i*5}px !important;
   }
 
-  .p_L#{$i}0 {
-    padding-left: #{$i}0px !important;
+  .p_L#{$i*5} {
+    padding-left: #{$i*5}px !important;
   }
 
-  .p_R#{$i}0 {
-    padding-right: #{$i}0px !important;
+  .p_R#{$i*5} {
+    padding-right: #{$i*5}px !important;
   }
 }
-
-
 @for $i from 1 through 9 {
   .m_#{$i} {
     margin: #{$i}px !important;
@@ -140,9 +138,8 @@
 }
 
 .m_B7 {
-  margin-bottom: 0.4375rem !important;
+  margin-bottom: .4375rem !important;
 }
-
 @for $i from 1 through 5 {
   .br#{$i} {
     border-radius: #{$i}px;
