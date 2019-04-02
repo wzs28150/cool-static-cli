@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/coolstyle.css">
   <script src="js/lib/jquery.min.js"></script>
   <script src="js/lib/swiper.min.js"></script>
+  <script src="js/lib/jquery.nicescroll.js"></script>
   <title>
     组件-cool web
   </title>
@@ -35,6 +36,7 @@
         <a href="index.html">首页</a>
         <a href="start.html">起步</a>
         <a href="components.html">组件</a>
+        <a href="pages.html">页面</a>
         <a data-ajax="no" href="javascript:void(0);">案例</a>
         <iframe src="https://ghbtns.com/github-btn.html?user=wzs28150&repo=cool-static-cli&type=star&count=false&size=large" frameborder="0" scrolling="0" width="75px" height="30px" style="margin-top:15px; float:right;"></iframe>
       </nav>
@@ -74,16 +76,16 @@
               <p class="description"><a data-ajax="no" href="http://flexboxgrid.com">官方文档&nbsp;:&nbsp;&nbsp;http://flexboxgrid.com</a></p>
               <h3>示例:</h3>
               <pre class="content2"><div codelighter='html'>    <div class="row">
-      <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
-        <div class="box-row"></div>
-      </div>
-      <div class="col-xs-6 col-sm-6 col-md-8 col-lg-10">
-        <div class="box-row"></div>
-      </div>
-      <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1">
-        <div class="box-row"></div>
-      </div>
-    </div></div></pre>
+<div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
+<div class="box-row"></div>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-8 col-lg-10">
+<div class="box-row"></div>
+</div>
+<div class="col-xs-6 col-sm-3 col-md-2 col-lg-1">
+<div class="box-row"></div>
+</div>
+</div></div></pre>
               <div class="row">
                 <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
                   <div class="box-row"></div>
@@ -114,6 +116,7 @@
 
             </div>
           </section>
+
           <section class="section section5" id="section2">
             <div class="inner">
               <h2>图片轮播插件 swiper</h2>
@@ -122,38 +125,38 @@
               <p>&nbsp;</p>
               <p>html代码</p>
               <pre class="content2"><div codelighter='html'>  <div class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-    </div>
-    <!-- 如果需要分页器 -->
-    <div class="swiper-pagination"></div>
+<div class="swiper-wrapper">
+<div class="swiper-slide">Slide 1</div>
+<div class="swiper-slide">Slide 2</div>
+<div class="swiper-slide">Slide 3</div>
+</div>
+<!-- 如果需要分页器 -->
+<div class="swiper-pagination"></div>
 
-    <!-- 如果需要导航按钮 -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+<!-- 如果需要导航按钮 -->
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
 
-    <!-- 如果需要滚动条 -->
-    <div class="swiper-scrollbar"></div>
+<!-- 如果需要滚动条 -->
+<div class="swiper-scrollbar"></div>
 </div></div></pre>
               <p>引入方式</p>
               <pre class="content2"><div codelighter='javascript'>  import Swiper from 'swiper';</div></pre>
               <p>js代码</p>
               <pre class="content2"><div codelighter='javascript'>  var mySwiper = new Swiper ('.swiper-container', {
-    direction: 'vertical',
-    loop: true,
+direction: 'vertical',
+loop: true,
 
-    // 如果需要分页器
-    pagination: '.swiper-pagination',
+// 如果需要分页器
+pagination: '.swiper-pagination',
 
-    // 如果需要前进后退按钮
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
+// 如果需要前进后退按钮
+nextButton: '.swiper-button-next',
+prevButton: '.swiper-button-prev',
 
-    // 如果需要滚动条
-    scrollbar: '.swiper-scrollbar',
-  })        </div></pre>
+// 如果需要滚动条
+scrollbar: '.swiper-scrollbar',
+})        </div></pre>
               <div class="swiper-container swiper-demo">
                 <div class="parallax-bg" style="background-image:url(img/Parallax.jpg)" data-swiper-parallax="-23%"></div>
                 <div class="swiper-wrapper">
@@ -190,6 +193,7 @@
               </div>
             </div>
           </section>
+
           <section class="section section5" id="section3">
             <div class="inner">
               <h2>头像裁剪上传 Cropper</h2>
@@ -198,22 +202,22 @@
               <p>&nbsp;</p>
               <p>html代码</p>
               <pre class="content2"><div codelighter='html'><div>
-  <img id="image" src="picture.jpg">
+<img id="image" src="picture.jpg">
 </div></div></pre>
               <p>js代码</p>
               <pre class="content2"><div codelighter='javascript'>import Cropper from 'cropperjs';
 const image = document.getElementById('image');
 const cropper = new Cropper(image, {
-  aspectRatio: 16 / 9,
-  crop(event) {
-    console.log(event.detail.x);
-    console.log(event.detail.y);
-    console.log(event.detail.width);
-    console.log(event.detail.height);
-    console.log(event.detail.rotate);
-    console.log(event.detail.scaleX);
-    console.log(event.detail.scaleY);
-  },
+aspectRatio: 16 / 9,
+crop(event) {
+console.log(event.detail.x);
+console.log(event.detail.y);
+console.log(event.detail.width);
+console.log(event.detail.height);
+console.log(event.detail.rotate);
+console.log(event.detail.scaleX);
+console.log(event.detail.scaleY);
+},
 });</div></pre>
               <label class="label avatar" data-toggle="tooltip" title="Change your avatar">
                 <img class="rounded" id="avatar" src="img/default-avatar.jpg" alt="avatar">
@@ -248,6 +252,7 @@ const cropper = new Cropper(image, {
               </div>
             </div>
           </section>
+
           <section class="section section5" id="section4">
             <div class="inner">
               <h2>滚动视差背景动画 parallax</h2>
@@ -260,23 +265,24 @@ const cropper = new Cropper(image, {
               <pre class="content2"><div codelighter='javascript'>  import '../components/parallax/jquery.scrolly.js';</div></pre>
               <p>js代码</p>
               <pre class="content2"><div codelighter='javascript'>  $('.parallax').scrolly({
-    bgParallax: true
-  });</div></pre>
+bgParallax: true
+});</div></pre>
               <div class="parallax-window">
                 <h2>parallax</h2>
                 <div class="parallax" data-velocity="-.3" style="background-image: url(img/stellar-spire-eagle-nebula-1400x900.jpg);"></div>
               </div>
             </div>
           </section>
+
           <section class="section section5" id="section5">
             <div class="inner">
               <h2>滚动加载动画 AOS</h2>
               <p class='description'><a data-ajax="no" href="http://michalsnik.github.io/aos/">官方文档&nbsp;:&nbsp;&nbsp;http://michalsnik.github.io/aos/</a></p>
               <h3>示例:</h3>
               <pre class="content2"><div codelighter='html'>    <div class="item "
-              data-aos="fade" data-aos-once="false">
-        <div class="box-row">fade</div>
-    </div></div></pre>
+      data-aos="fade" data-aos-once="false">
+<div class="box-row">fade</div>
+</div></div></pre>
               <table>
                 <tbody>
                   <tr class="firstRow">
@@ -417,6 +423,7 @@ const cropper = new Cropper(image, {
               </div>
             </div>
           </section>
+
         </section>
         <aside class="page-right col-xs-12  col-lg-2">
           <ul>

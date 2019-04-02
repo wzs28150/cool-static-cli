@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/coolstyle.css">
   <script src="js/lib/jquery.min.js"></script>
   <script src="js/lib/swiper.min.js"></script>
+  <script src="js/lib/jquery.nicescroll.js"></script>
   <title>
     起步-cool web
   </title>
@@ -35,6 +36,7 @@
         <a href="index.html">首页</a>
         <a href="start.html">起步</a>
         <a href="components.html">组件</a>
+        <a href="pages.html">页面</a>
         <a data-ajax="no" href="javascript:void(0);">案例</a>
         <iframe src="https://ghbtns.com/github-btn.html?user=wzs28150&repo=cool-static-cli&type=star&count=false&size=large" frameborder="0" scrolling="0" width="75px" height="30px" style="margin-top:15px; float:right;"></iframe>
       </nav>
@@ -59,7 +61,7 @@
   </div>
 
   <main class="main page-animate">
-    <article class="start" data-controller="start">
+    <article class="start" data-controller="pages">
       <section class="er-banner">
         <div class="container " style="">
           <h1>新闻列表</h1>
@@ -68,90 +70,152 @@
       </section>
       <div class="row page container">
         <section class="page-left col-xs-12  col-lg-10 clearfix">
-          <div class="news-pic-item m_T20 m_B20 white p_15">
-            <a href="">
-              <div class="pic" style="background-image:url(img/news.jpg)"></div>
-              <div class="inner">
-                <div class="title text-hidden font18 m_B15 m_T10">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</div>
-                <div class="des f-gary">4月1日，生态环境部副部长、国家核安全局局长刘华在中国核能可持续发展论坛上介绍，今年会有核电项目陆续开工建设。我国现有运行和在建核电机组56台，机组数量已达到世界第三位。中国将在确保安全前提下，继续发展核电。</div>
-              </div>
-            </a>
-          </div>
+          <section class="clearfix" id="section1">
+            <div class="news-pic-item m_T20 m_B20 white p_15">
+              <a href="">
+                <div class="pic" style="background-image:url(img/news.jpg)"></div>
+                <div class="inner">
+                  <div class="title text-hidden font18 m_B15 m_T10">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</div>
+                  <div class="des f-gary font14">4月1日，生态环境部副部长、国家核安全局局长刘华在中国核能可持续发展论坛上介绍，今年会有核电项目陆续开工建设。我国现有运行和在建核电机组56台，机组数量已达到世界第三位。中国将在确保安全前提下，继续发展核电。3月18日，生态环境部公示当天受理的《福建漳州核电厂1、2号机组环境影响报告书（建造阶段）》、《中广核广东太平岭核电厂一期工程环境影响报告书（建造阶段）》，两份环境影响评价文件显示，漳州核电1号机组和太平岭核电1号机组计划于2019年6月开工。</div>
+                </div>
+              </a>
+            </div>
 
-          <div class="news-pic-item m_T20 m_B20 white p_15">
-            <a href="">
-              <div class="pic" style="background-image:url(img/news.jpg)"></div>
-              <div class="inner">
-                <div class="title text-hidden font18 m_B15 m_T10">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</div>
-                <div class="des f-gary">4月1日，生态环境部副部长、国家核安全局局长刘华在中国核能可持续发展论坛上介绍，今年会有核电项目陆续开工建设。我国现有运行和在建核电机组56台，机组数量已达到世界第三位。中国将在确保安全前提下，继续发展核电。</div>
-              </div>
-            </a>
-          </div>
+            <div class="news-pic-item m_T20 m_B20 white p_15">
+              <a href="">
+                <div class="pic" style="background-image:url(img/news.jpg)"></div>
+                <div class="inner">
+                  <div class="title text-hidden font18 m_B15 m_T10">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</div>
+                  <div class="des f-gary font14">4月1日，生态环境部副部长、国家核安全局局长刘华在中国核能可持续发展论坛上介绍，今年会有核电项目陆续开工建设。我国现有运行和在建核电机组56台，机组数量已达到世界第三位。中国将在确保安全前提下，继续发展核电。3月18日，生态环境部公示当天受理的《福建漳州核电厂1、2号机组环境影响报告书（建造阶段）》、《中广核广东太平岭核电厂一期工程环境影响报告书（建造阶段）》，两份环境影响评价文件显示，漳州核电1号机组和太平岭核电1号机组计划于2019年6月开工。</div>
+                </div>
+              </a>
+            </div>
 
-          <div class="news-item m_T20 m_B20 white p_15">
-            <a class="text-hidden" href="">
-              核电重启确认！生态环境部：今年会有核电项目陆续开工建设
-              <span class="f-gary">2019-3-29</span>
-            </a>
-          </div>
+            <div class="news-pic-item m_T20 m_B20 white p_15">
+              <a href="">
+                <div class="pic" style="background-image:url(img/news.jpg)"></div>
+                <div class="inner">
+                  <div class="title text-hidden font18 m_B15 m_T10">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</div>
+                  <div class="des f-gary font14">4月1日，生态环境部副部长、国家核安全局局长刘华在中国核能可持续发展论坛上介绍，今年会有核电项目陆续开工建设。我国现有运行和在建核电机组56台，机组数量已达到世界第三位。中国将在确保安全前提下，继续发展核电。3月18日，生态环境部公示当天受理的《福建漳州核电厂1、2号机组环境影响报告书（建造阶段）》、《中广核广东太平岭核电厂一期工程环境影响报告书（建造阶段）》，两份环境影响评价文件显示，漳州核电1号机组和太平岭核电1号机组计划于2019年6月开工。</div>
+                </div>
+              </a>
+            </div>
 
-          <div class="news-item m_T20 m_B20 white p_15">
-            <a class="text-hidden" href="">
-              核电重启确认！生态环境部：今年会有核电项目陆续开工建设
-              <span class="f-gary">2019-3-29</span>
-            </a>
-          </div>
+            <div class="news-pic-item m_T20 m_B20 white p_15">
+              <a href="">
+                <div class="pic" style="background-image:url(img/news.jpg)"></div>
+                <div class="inner">
+                  <div class="title text-hidden font18 m_B15 m_T10">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</div>
+                  <div class="des f-gary font14">4月1日，生态环境部副部长、国家核安全局局长刘华在中国核能可持续发展论坛上介绍，今年会有核电项目陆续开工建设。我国现有运行和在建核电机组56台，机组数量已达到世界第三位。中国将在确保安全前提下，继续发展核电。3月18日，生态环境部公示当天受理的《福建漳州核电厂1、2号机组环境影响报告书（建造阶段）》、《中广核广东太平岭核电厂一期工程环境影响报告书（建造阶段）》，两份环境影响评价文件显示，漳州核电1号机组和太平岭核电1号机组计划于2019年6月开工。</div>
+                </div>
+              </a>
+            </div>
 
-          <div class="news-item m_T20 m_B20 white p_15">
-            <a class="text-hidden" href="">
-              核电重启确认！生态环境部：今年会有核电项目陆续开工建设
-              <span class="f-gary">2019-3-29</span>
-            </a>
-          </div>
+            <div class="news-pic-item m_T20 m_B20 white p_15">
+              <a href="">
+                <div class="pic" style="background-image:url(img/news.jpg)"></div>
+                <div class="inner">
+                  <div class="title text-hidden font18 m_B15 m_T10">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</div>
+                  <div class="des f-gary font14">4月1日，生态环境部副部长、国家核安全局局长刘华在中国核能可持续发展论坛上介绍，今年会有核电项目陆续开工建设。我国现有运行和在建核电机组56台，机组数量已达到世界第三位。中国将在确保安全前提下，继续发展核电。3月18日，生态环境部公示当天受理的《福建漳州核电厂1、2号机组环境影响报告书（建造阶段）》、《中广核广东太平岭核电厂一期工程环境影响报告书（建造阶段）》，两份环境影响评价文件显示，漳州核电1号机组和太平岭核电1号机组计划于2019年6月开工。</div>
+                </div>
+              </a>
+            </div>
 
-          <div class="news-item m_T20 m_B20 white p_15">
-            <a class="text-hidden" href="">
-              核电重启确认！生态环境部：今年会有核电项目陆续开工建设
-              <span class="f-gary">2019-3-29</span>
-            </a>
-          </div>
+            <div class="news-pic-item m_T20 m_B20 white p_15">
+              <a href="">
+                <div class="pic" style="background-image:url(img/news.jpg)"></div>
+                <div class="inner">
+                  <div class="title text-hidden font18 m_B15 m_T10">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</div>
+                  <div class="des f-gary font14">4月1日，生态环境部副部长、国家核安全局局长刘华在中国核能可持续发展论坛上介绍，今年会有核电项目陆续开工建设。我国现有运行和在建核电机组56台，机组数量已达到世界第三位。中国将在确保安全前提下，继续发展核电。3月18日，生态环境部公示当天受理的《福建漳州核电厂1、2号机组环境影响报告书（建造阶段）》、《中广核广东太平岭核电厂一期工程环境影响报告书（建造阶段）》，两份环境影响评价文件显示，漳州核电1号机组和太平岭核电1号机组计划于2019年6月开工。</div>
+                </div>
+              </a>
+            </div>
 
-          <div class="news-item m_T20 m_B20 white p_15">
-            <a class="text-hidden" href="">
-              核电重启确认！生态环境部：今年会有核电项目陆续开工建设
-              <span class="f-gary">2019-3-29</span>
-            </a>
-          </div>
+            <div class="news-pic-item m_T20 m_B20 white p_15">
+              <a href="">
+                <div class="pic" style="background-image:url(img/news.jpg)"></div>
+                <div class="inner">
+                  <div class="title text-hidden font18 m_B15 m_T10">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</div>
+                  <div class="des f-gary font14">4月1日，生态环境部副部长、国家核安全局局长刘华在中国核能可持续发展论坛上介绍，今年会有核电项目陆续开工建设。我国现有运行和在建核电机组56台，机组数量已达到世界第三位。中国将在确保安全前提下，继续发展核电。3月18日，生态环境部公示当天受理的《福建漳州核电厂1、2号机组环境影响报告书（建造阶段）》、《中广核广东太平岭核电厂一期工程环境影响报告书（建造阶段）》，两份环境影响评价文件显示，漳州核电1号机组和太平岭核电1号机组计划于2019年6月开工。</div>
+                </div>
+              </a>
+            </div>
 
-          <div class="news-item m_T20 m_B20 white p_15">
-            <a class="text-hidden" href="">
-              核电重启确认！生态环境部：今年会有核电项目陆续开工建设
-              <span class="f-gary">2019-3-29</span>
-            </a>
-          </div>
+            <div class="news-pic-item m_T20 m_B20 white p_15">
+              <a href="">
+                <div class="pic" style="background-image:url(img/news.jpg)"></div>
+                <div class="inner">
+                  <div class="title text-hidden font18 m_B15 m_T10">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</div>
+                  <div class="des f-gary font14">4月1日，生态环境部副部长、国家核安全局局长刘华在中国核能可持续发展论坛上介绍，今年会有核电项目陆续开工建设。我国现有运行和在建核电机组56台，机组数量已达到世界第三位。中国将在确保安全前提下，继续发展核电。3月18日，生态环境部公示当天受理的《福建漳州核电厂1、2号机组环境影响报告书（建造阶段）》、《中广核广东太平岭核电厂一期工程环境影响报告书（建造阶段）》，两份环境影响评价文件显示，漳州核电1号机组和太平岭核电1号机组计划于2019年6月开工。</div>
+                </div>
+              </a>
+            </div>
 
-          <div class="news-item m_T20 m_B20 white p_15">
-            <a class="text-hidden" href="">
-              核电重启确认！生态环境部：今年会有核电项目陆续开工建设
-              <span class="f-gary">2019-3-29</span>
-            </a>
-          </div>
+          </section>
+          <section class="clearfix" id="section2">
+            <div class="news-item m_T20 m_B20 white p_15">
+              <a href="">
+                <span class="title text-hidden">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</span>
+                <span class="time f-gary">2019-3-29</span>
+              </a>
+            </div>
 
-          <div class="news-item m_T20 m_B20 white p_15">
-            <a class="text-hidden" href="">
-              核电重启确认！生态环境部：今年会有核电项目陆续开工建设
-              <span class="f-gary">2019-3-29</span>
-            </a>
-          </div>
+            <div class="news-item m_T20 m_B20 white p_15">
+              <a href="">
+                <span class="title text-hidden">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</span>
+                <span class="time f-gary">2019-3-29</span>
+              </a>
+            </div>
 
+            <div class="news-item m_T20 m_B20 white p_15">
+              <a href="">
+                <span class="title text-hidden">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</span>
+                <span class="time f-gary">2019-3-29</span>
+              </a>
+            </div>
+
+            <div class="news-item m_T20 m_B20 white p_15">
+              <a href="">
+                <span class="title text-hidden">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</span>
+                <span class="time f-gary">2019-3-29</span>
+              </a>
+            </div>
+
+            <div class="news-item m_T20 m_B20 white p_15">
+              <a href="">
+                <span class="title text-hidden">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</span>
+                <span class="time f-gary">2019-3-29</span>
+              </a>
+            </div>
+
+            <div class="news-item m_T20 m_B20 white p_15">
+              <a href="">
+                <span class="title text-hidden">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</span>
+                <span class="time f-gary">2019-3-29</span>
+              </a>
+            </div>
+
+            <div class="news-item m_T20 m_B20 white p_15">
+              <a href="">
+                <span class="title text-hidden">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</span>
+                <span class="time f-gary">2019-3-29</span>
+              </a>
+            </div>
+
+            <div class="news-item m_T20 m_B20 white p_15">
+              <a href="">
+                <span class="title text-hidden">核电重启确认！生态环境部：今年会有核电项目陆续开工建设</span>
+                <span class="time f-gary">2019-3-29</span>
+              </a>
+            </div>
+
+          </section>
         </section>
 
         <aside class="page-right col-xs-12  col-lg-2">
           <ul>
-            <li><a href="start.html" data-jump="no" data-target="#section1">安装</a></li>
-            <li><a href="start.html" data-jump="no" data-target="#section2">运行</a></li>
-            <li><a href="start.html" data-jump="no" data-target="#section3">结构</a></li>
-            <li><a href="start.html" data-jump="no" data-target="#section4">方法</a></li>
+            <li><a href="start.html" data-jump="no" data-target="#section1">带图</a></li>
+            <li><a href="start.html" data-jump="no" data-target="#section2">无图</a></li>
           </ul>
         </aside>
       </div>
