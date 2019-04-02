@@ -28,3 +28,23 @@
 .font12 {
   font-size: 12px;
 }
+/*文字省略号*/
+
+.text-hidden {
+  display      : block;
+  white-space  : nowrap;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}

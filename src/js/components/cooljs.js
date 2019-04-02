@@ -15,7 +15,6 @@ import NProgress from 'nprogress';
 import AOS from 'aos';
 
 
-const niceScroll = require('./nicescroll/jquery.nicescroll.js');
 // 不使用滚动条时开启
 // import SmoothScroll from 'smoothscroll-for-websites';
 /**

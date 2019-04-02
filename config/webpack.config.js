@@ -9,6 +9,12 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const fs = require('fs');
 const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
+const PostcssConfigPath = './config/postcss.config.js';
+const HappyPack = require('happypack');
+const os = require('os');
+
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
   return templateFiles.map((item) => {
@@ -23,8 +29,8 @@ function generateHtmlPlugins(templateDir) {
   });
 }
 
-const htmlPlugins = generateHtmlPlugins('./src/html/views');
-
+const htmlPlugins = generateHtmlPlugins('../src/html/views');
+// console.log(htmlPlugins);return false;
 module.exports = {
   entry: ['./src/js/index.js', './src/scss/style.scss'],
   output: {
@@ -32,66 +38,60 @@ module.exports = {
   },
   devtool: 'source-map',
   externals: {
-    jquery: 'jQuery'
+    jquery: 'jQuery',
+    swiper: 'Swiper'
   },
   module: {
     rules: [{
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'src/js'),
+      test: /\.js$/,
+      include: path.resolve(__dirname, '../src/js'),
+      use: ['happypack/loader?id=js'],
+      exclude: path.resolve(__dirname, '../node_modules')
+    },
+
+    {
+      test: /\.(sass|scss)$/,
+      include: path.resolve(__dirname, '../src/scss'),
+      use: ExtractTextPlugin.extract({
         use: [{
-            loader: 'babel-loader'
-          },
-          {
-            loader: 'eslint-loader',
-            options: {
-              emitWarning: true,
-              formatter: eslintFriendlyFormatter,
-              configFile: '.eslintrc'
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
+            minimize: true,
+            url: false
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true,
+            config: {
+              path: PostcssConfigPath
             }
           }
+        },
+        {
+          loader: 'sass-loader'
+        }
         ]
-      },
-    
-      {
-        test: /\.(sass|scss)$/,
-        include: path.resolve(__dirname, 'src/scss'),
-        use: ExtractTextPlugin.extract({
-          use: [{
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
-                minimize: true,
-                url: false
-              }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: true
-              }
-            },
-            {
-              loader: 'sass-loader'
-            }
-          ]
-        })
+      })
+    },
+    {
+      test: /\.html$/,
+      include: path.resolve(__dirname, '../src/html/includes'),
+      use: ['happypack/loader?id=html']
+    },
+    {
+      test: /\.svg$/,
+      include: path.resolve(__dirname, '../src/img/svg'),
+      use: [{
+        loader: 'svg-sprite-loader'
       },
       {
-        test: /\.html$/,
-        include: path.resolve(__dirname, 'src/html/includes'),
-        use: ['raw-loader']
-      },
-      {
-        test: /\.svg$/,
-        include: path.resolve(__dirname, 'src/img/svg'),
-        use: [{
-            loader: 'svg-sprite-loader'
-          },
-          {
-            loader: 'svgo-loader'
-          }
-        ]
+        loader: 'svgo-loader'
       }
+      ]
+    }
     ]
   },
   plugins: [
@@ -105,27 +105,42 @@ module.exports = {
       filename: './css/coolstyle.css',
       allChunks: true
     }),
+    new HappyPack({
+      id: 'js',
+      threadPool: happyThreadPool,
+      loaders: [{
+        loader: 'babel-loader?cacheDirectory=true'
+      }]
+    }),
+    new HappyPack({
+      id: 'html',
+      threadPool: happyThreadPool,
+      loaders: [{
+        loader: 'raw-loader?cacheDirectory=true'
+      }]
+    }),
+
     new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin([{
-        from: './src/fonts',
-        to: './fonts'
-      },
-      {
-        from: './src/media',
-        to: './media'
-      },
-      // {
-      //   from: './src/js/page',
-      //   to: './js/page'
-      // },
-      {
-        from: './src/favicon',
-        to: './favicon'
-      },
-      {
-        from: './src/img',
-        to: './img'
-      }
+      from: './src/fonts',
+      to: './fonts'
+    },
+    {
+      from: './src/media',
+      to: './media'
+    },
+    {
+      from: './src/js/lib',
+      to: './js/lib'
+    },
+    {
+      from: './src/favicon',
+      to: './favicon'
+    },
+    {
+      from: './src/img',
+      to: './img'
+    }
     ]),
     new SpriteLoaderPlugin(),
     new webpack.ProvidePlugin({

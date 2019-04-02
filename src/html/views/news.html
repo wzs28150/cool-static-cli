@@ -3,7 +3,7 @@
 }; %>
 <%= _.template(require('../includes/header.html'))(data) %>
 <main class="main page-animate">
-  <article class="start" data-controller="start">
+  <article class="start" data-controller="pages">
     <section class="er-banner">
       <div class="container " style="">
         <h1>新闻列表</h1>
@@ -12,24 +12,32 @@
     </section>
     <div class="row page container">
       <section class="page-left col-xs-12  col-lg-10 clearfix">
-        <%= _.template(require('../includes/components/newslist/news_pic_item.html'))() %>
-        <%= _.template(require('../includes/components/newslist/news_pic_item.html'))() %>
-        <%= _.template(require('../includes/components/newslist/news_item.html'))() %>
-        <%= _.template(require('../includes/components/newslist/news_item.html'))() %>
-        <%= _.template(require('../includes/components/newslist/news_item.html'))() %>
-        <%= _.template(require('../includes/components/newslist/news_item.html'))() %>
-        <%= _.template(require('../includes/components/newslist/news_item.html'))() %>
-        <%= _.template(require('../includes/components/newslist/news_item.html'))() %>
-        <%= _.template(require('../includes/components/newslist/news_item.html'))() %>
-        <%= _.template(require('../includes/components/newslist/news_item.html'))() %>
+        <section class="clearfix" id="section1">
+          <%= _.template(require('../includes/pages/newslist/news_pic_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_pic_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_pic_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_pic_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_pic_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_pic_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_pic_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_pic_item.html'))() %>
+        </section>
+        <section class="clearfix" id="section2">
+          <%= _.template(require('../includes/pages/newslist/news_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_item.html'))() %>
+          <%= _.template(require('../includes/pages/newslist/news_item.html'))() %>
+        </section>
       </section>
 
       <aside class="page-right col-xs-12  col-lg-2">
         <ul>
-          <li><a href="start.html" data-jump="no" data-target="#section1">安装</a></li>
-          <li><a href="start.html" data-jump="no" data-target="#section2">运行</a></li>
-          <li><a href="start.html" data-jump="no" data-target="#section3">结构</a></li>
-          <li><a href="start.html" data-jump="no" data-target="#section4">方法</a></li>
+          <li><a href="start.html" data-jump="no" data-target="#section1">带图</a></li>
+          <li><a href="start.html" data-jump="no" data-target="#section2">无图</a></li>
         </ul>
       </aside>
     </div>

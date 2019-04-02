@@ -12,17 +12,16 @@
     "cool-static-cli"
   ],
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
-    "watch": "webpack --mode development --watch",
-    "build": "webpack --mode production",
-    "postbuild": "html dist/*.html --indent-size 2"
+    "dev": "webpack-dev-server --mode development --config config/webpack.config.js",
+    "watch": "webpack --mode development --watch --config config/webpack.config.js",
+    "build": "webpack --mode production --config config/webpack.config.js",
+    "postbuild": "html dist/*.html --indent-size 2 --config config/webpack.config.js"
   },
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "cropperjs": "^1.4.3",
     "flexboxgrid": "^6.3.1",
     "headroom.js": "^0.9.4",
-
     "jquery-pjax": "^2.0.1",
     "jquery.nicescroll": "^3.7.6",
     "loaders.css": "^0.1.2",
@@ -35,6 +34,7 @@
     "swiper": "^3.4.2"
   },
   "devDependencies": {
+    "art-template": "^4.13.2",
     "art-template-loader": "^1.4.3",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
@@ -53,6 +53,7 @@
     "eslint-plugin-import": "^2.10.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
+    "happypack": "^5.0.1",
     "html-cli": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.8.3",
@@ -67,8 +68,7 @@
     "svgo-loader": "^2.1.0",
     "webpack": "^4.5.0",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.2",
-    "art-template": "^4.13.2"
+    "webpack-dev-server": "^3.1.2"
   },
   "browserslist": [
     "> 1%",

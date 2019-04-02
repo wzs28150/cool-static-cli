@@ -194,4 +194,19 @@
   @if map-has-key($fs-value, overflow) {
     overflow: map-get($fs-value, overflow);
   }
+  @if map-has-key($fs-value, padding-bottom) {
+    padding-bottom: map-get($fs-value, padding-bottom);
+  }
+  @if map-has-key($fs-value, padding-top) {
+    padding-top: map-get($fs-value, padding-top);
+  }
+  @if map-has-key($fs-value, padding-left) {
+    padding-left: map-get($fs-value, padding-left);
+  }
+  @if map-has-key($fs-value, padding-right) {
+    padding-right: map-get($fs-value, padding-right);
+  }
+  @if map-has-key($fs-value, min-height) {
+    min-height: map-get($fs-value, min-height);
+  }
 }
