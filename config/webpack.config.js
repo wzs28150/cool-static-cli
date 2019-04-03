@@ -154,11 +154,20 @@ module.exports = {
     })
   ].concat(htmlPlugins),
   devServer: {
-    quiet: true,
+    // quiet: true,
+    // overlay: {
+    //   warnings: false,
+    //   errors: true
+    // },
+    // disableHostCheck: true
+    host: '0.0.0.0',
+    port: 1573, // 端口
+    open: true, // 自动打开页面，
+    hot: true, // 开启热更新
+    noInfo: true,
     overlay: {
-      warnings: false,
-      errors: true
+      errors: true, // 编译过程中如果有任何错误，都会显示到页面上
     },
-    disableHostCheck: true
+    disableHostCheck: true // 不检查host地址方便局域网访问
   }
 };
