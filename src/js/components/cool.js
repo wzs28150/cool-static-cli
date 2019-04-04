@@ -65,9 +65,9 @@ export default class Cool {
   // 页面加载动画
   pageAnimate() {
     if (this.exists('.page-animate')) {
-      setTimeout(() => {
-        $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
-      }, 1000);
+      // setTimeout(() => {
+      //   $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
+      // }, 1000);
     }
   }
   // 设置导航选中状态
@@ -90,7 +90,10 @@ export default class Cool {
     let scrollTo = 0;
     let jump = 'yes';
     const that = this;
+
+    console.log(window.location.origin);
     $(document).off('click', 'a[data-nopjax!=no]').on('click', 'a[data-nopjax!=no]', function (event) {
+      const href = window.location.href;
       event.preventDefault();
       url = $(this).attr('href');
       target = $(this).data('target');
@@ -103,9 +106,17 @@ export default class Cool {
       if (!container) {
         container = 'main';
       }
+      if (`${window.location.origin}/${url}` == href) {
+        $.pjax.reload(container,{
+          container,
+          timeout: 8000,
+          scrollTo: false
+        })
+        return false;
+      }
       if (target) {
         if (that.exists('.page-animate')) {
-          $('.page-animate').addClass('page-animate-pause');
+          // $('.page-animate').addClass('page-animate-pause');
         }
         if (jump == 'no') {
           const scroll_offset = $(target).offset();
@@ -125,7 +136,7 @@ export default class Cool {
         }
       } else {
         if (that.exists('.page-animate')) {
-          $('.page-animate').removeClass('page-animate-pause');
+          // $('.page-animate').removeClass('page-animate-pause');
         }
         $.pjax({
           url,
@@ -142,7 +153,7 @@ export default class Cool {
       NProgress.start();
       // 页面动画
       if (that.exists('.page-animate')) {
-        $('.page-animate').removeClass('page-animate-end').addClass('page-animate-start');
+        // $('.page-animate').removeClass('page-animate-end').addClass('page-animate-start');
       }
     });
 
