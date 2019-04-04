@@ -65,9 +65,9 @@ export default class Cool {
   // 页面加载动画
   pageAnimate() {
     if (this.exists('.page-animate')) {
-      // setTimeout(() => {
-      //   $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
-      // }, 1000);
+      setTimeout(() => {
+        $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
+      }, 1000);
     }
   }
   // 设置导航选中状态
@@ -104,24 +104,7 @@ export default class Cool {
       if (!container) {
         container = 'main';
       }
-      if (`${window.location.origin}/${url}` == href) {
-        $.pjax.reload(container,{
-          container,
-          timeout: 8000,
-          scrollTo: false
-        })
-        const controller = target.data('controller');
-        const action = target.data('action');
-        if (controller) {
-          if (action) {
-            callback(controller, action);
-          } else {
-            callback(controller, 'index');
-          }
-        } else {
-          callback();
-        }
-      }
+
       if (target) {
         if (that.exists('.page-animate')) {
           $('.page-animate').addClass('page-animate-pause');
@@ -143,9 +126,6 @@ export default class Cool {
           });
         }
       } else {
-        if (that.exists('.page-animate')) {
-          $('.page-animate').removeClass('page-animate-pause');
-        }
         $.pjax({
           url,
           container,
@@ -154,6 +134,7 @@ export default class Cool {
           scrollTo: false
         });
       }
+
     });
 
     $(document).off('pjax:start').on('pjax:start', (xhr, options) => {
@@ -214,15 +195,11 @@ export default class Cool {
    */
   router(controller, action, state) {
     if (controller) {
-      if (controller && localStorage.controller && localStorage.controller == controller && state) {
-
-      } else {
-        const controllerjs = require(`../page/${controller}`);
-        const index = new controllerjs.default((a) => { this.navActive(a); });
-        const str1 = `index.${action}();`;
-        eval(str1);
-        localStorage.controller = controller;
-      }
+      const controllerjs = require(`../page/${controller}`);
+      const index = new controllerjs.default((a) => { this.navActive(a); });
+      const str1 = `index.${action}();`;
+      eval(str1);
+      localStorage.controller = controller;
     }
   }
 }
