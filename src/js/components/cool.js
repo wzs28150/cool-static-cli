@@ -110,7 +110,6 @@ export default class Cool {
           timeout: 8000,
           scrollTo: false
         })
-        return false;
       }
       if (target) {
         if (that.exists('.page-animate')) {
