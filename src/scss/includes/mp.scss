@@ -138,12 +138,16 @@
 }
 
 .m_B7 {
-  margin-bottom: .4375rem !important;
+  margin-bottom: 0.4375rem !important;
 }
 @for $i from 1 through 5 {
   .br#{$i} {
     border-radius: #{$i}px;
   }
+}
+
+.br50 {
+  border-radius: 50px;
 }
 
 .br100 {
