@@ -110,10 +110,21 @@ export default class Cool {
           timeout: 8000,
           scrollTo: false
         })
+        const controller = target.data('controller');
+        const action = target.data('action');
+        if (controller) {
+          if (action) {
+            callback(controller, action);
+          } else {
+            callback(controller, 'index');
+          }
+        } else {
+          callback();
+        }
       }
       if (target) {
         if (that.exists('.page-animate')) {
-          // $('.page-animate').addClass('page-animate-pause');
+          $('.page-animate').addClass('page-animate-pause');
         }
         if (jump == 'no') {
           const scroll_offset = $(target).offset();
@@ -133,7 +144,7 @@ export default class Cool {
         }
       } else {
         if (that.exists('.page-animate')) {
-          // $('.page-animate').removeClass('page-animate-pause');
+          $('.page-animate').removeClass('page-animate-pause');
         }
         $.pjax({
           url,
@@ -150,12 +161,12 @@ export default class Cool {
       NProgress.start();
       // 页面动画
       if (that.exists('.page-animate')) {
-        // $('.page-animate').removeClass('page-animate-end').addClass('page-animate-start');
+        $('.page-animate').removeClass('page-animate-end').addClass('page-animate-start');
       }
     });
 
     $(document).off('pjax:end').on('ready pjax:end', (data, options) => {
-      // $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
+      $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
       const target = $(data.target).children();
       const controller = target.data('controller');
       const action = target.data('action');
