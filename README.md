@@ -76,3 +76,13 @@ export default class Pages {
   }
 }
 ```
+
+### 样式class 总结:
+#### 文字:
+```
+  text-hidden : 文字溢出隐藏
+  text-center : 文字居中
+  text-left   : 文字居左
+  text-right  : 文字居右
+  font12      : 12号字 (同理包括 14,16,18,20,24,26)
+```  
