@@ -1,47 +1,36 @@
-import debug from '../components/debug/debug'
-import Headroom from 'headroom';
-import lighter from '../components/code-lighter/code-lighter'
+/* jshint esversion: 6 */
+/*!
+ * Start 起步页模块  v0.0.1
+ *
+ * Copyright wzs
+ * Released under the MIT license
+ * https://github.com/wzs28150/cool-static-cli
+ * Date: 2019-04-4
+ */
+import debug from '../components/debug/debug'; // 控制台调试
+import fixed from '../components/fixed/fixed'; // 右侧导航 滚动固定位置
+import lighter from '../components/code-lighter/code-lighter'; // 高亮插件
 
-// 右侧导航 滚动定位
-const fixed = () => {
-  var myElement = document.querySelector(".page-right");
-  // construct an instance of Headroom, passing the element
-  var headroom = new Headroom(myElement, {
-    "tolerance": 5,
-    "offset": $('.page-right ul').offset().top,
-    "classes": {
-      initial: "",
-      // when scrolling up
-      pinned: "",
-      // when scrolling down
-      unpinned: "",
-      // when above offset
-      top: "",
-      // when below offset
-      notTop: "fixed",
-      // when at bottom of scoll area
-      bottom: "fixed",
-      // when not at bottom of scroll area
-      notBottom: ""
-    }
-  });
-  // initialise
-  headroom.init();
-}
-const init = (callback) => {
-  callback(1);
-  debug('start controller is load');
-  fixed()
-
-  var option = {
-    tabSpace: 0,
-    style: 'light'
+export default class Start {
+  constructor(setNavActive) {
+    // 设置导航第几个选中
+    setNavActive(1);
+    // 控制台输出信息 方便调试页面是否加载
+    debug('start controller is load');
+    // 右侧导航 滚动固定
+    fixed();
   }
-  lighter.auto(option);
-};
-
-const start = {
-  init: init
-};
-
-export default start;
+  // 主方法
+  index() {
+    // 调用高亮方法
+    this.gaoliang();
+  }
+  // 代码高亮
+  gaoliang() {
+    const option = {
+      tabSpace: 0,
+      style: 'light'
+    };
+    lighter.auto(option);
+  }
+}

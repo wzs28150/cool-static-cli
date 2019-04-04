@@ -32,6 +32,11 @@
           <%= _.template(require('../includes/pages/newslist/news_item.html'))() %>
           <%= _.template(require('../includes/pages/newslist/news_item.html'))() %>
         </section>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            console.log('我是news页面上的js,我发誓我能被加载!')
+          });
+        </script>
       </section>
 
       <aside class="page-right col-xs-12  col-lg-2">

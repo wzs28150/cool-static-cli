@@ -13,7 +13,7 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const PostcssConfigPath = './config/postcss.config.js';
 const HappyPack = require('happypack');
 const os = require('os');
-
+const ip = require('ip');
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -160,8 +160,8 @@ module.exports = {
     //   errors: true
     // },
     // disableHostCheck: true
-    host: '0.0.0.0',
-    port: 1573, // 端口
+    host:  ip.address(),
+    // port: 1573, // 端口
     open: true, // 自动打开页面，
     hot: true, // 开启热更新
     noInfo: true,
