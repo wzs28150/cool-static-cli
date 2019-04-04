@@ -112,4 +112,8 @@ export default class Pages {
   pBn    : padding-bottom: 0;
   pLn    : padding-left: 0;
   pRn    : padding-right: 0;
+
+  br_1   : 圆角为1 (数值包括1 ~ 5)
+  br_50  : 胶囊圆角
+  br_100 : 圆形
 ```
