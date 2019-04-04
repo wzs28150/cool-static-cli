@@ -86,3 +86,30 @@ export default class Pages {
   text-right  : 文字居右
   font12      : 12号字 (同理包括 14,16,18,20,24,26)
 ```  
+#### 间距,边距,边框,圆角
+```
+  m_5    : 四周 maigin 为 5 (数值包括 5 10 15 20 ..... 100)
+  p_5    : 四周 padding为 5 (数值包括 5 10 15 20 ..... 100)
+
+  m_T5   : 顶部 maigin 为 5 (数值包括 5 10 15 20 ..... 100)
+  m_B5   : 底部 maigin 为 5 (数值包括 5 10 15 20 ..... 100)
+  m_L5   : 左侧 maigin 为 5 (数值包括 5 10 15 20 ..... 100)
+  m_R5   : 右侧 maigin 为 5 (数值包括 5 10 15 20 ..... 100)
+
+  p_T5   : 顶部 padding为 5 (数值包括 5 10 15 20 ..... 100)
+  p_B5   : 底部 padding为 5 (数值包括 5 10 15 20 ..... 100)
+  p_L5   : 左侧 padding为 5 (数值包括 5 10 15 20 ..... 100)
+  p_R5   : 右侧 padding为 5 (数值包括 5 10 15 20 ..... 100)
+
+  mn     : margin: 0;
+  mTn    : margin-top: 0;
+  mBn    : margin-bottom: 0;
+  mLn    : margin-left: 0;
+  mRn    : margin-right: 0;
+
+  pn     : padding: 0;
+  pTn    : padding-top: 0;
+  pBn    : padding-bottom: 0;
+  pLn    : padding-left: 0;
+  pRn    : padding-right: 0;
+```
