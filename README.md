@@ -51,33 +51,28 @@
 ```
 
 ### 每页js类:
+
 #### 例子:
 ```
+// 调用当前页要用的插件
 import debug from '../components/debug/debug'; // 控制台调试
-import fixed from '../components/fixed/fixed'; // 右侧导航 滚动固定位置
-import lighter from '../components/code-lighter/code-lighter'; // 高亮插件
-
+// 定义类
 export default class Pages {
+  // 构造函数默认自动执行
   constructor(setNavActive) {
     // 设置导航第几个选中
     setNavActive(3);
     // 控制台输出信息 方便调试页面是否加载
     debug('pages controller is load');
-    // 右侧导航 滚动固定
-    fixed();
   }
   // 主方法
   index() {
-    // 调用高亮方法
-    this.gaoliang();
+    // 调用方法
+    this.fangfa();
   }
-  // 代码高亮
-  gaoliang() {
-    const option = {
-      tabSpace: 0,
-      style: 'light'
-    };
-    lighter.auto(option);
+  // 定义方法
+  fangfa() {
+    console.log('我是方法');
   }
 }
 ```
