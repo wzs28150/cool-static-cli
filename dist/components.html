@@ -202,7 +202,7 @@ scrollbar: '.swiper-scrollbar',
               <p>&nbsp;</p>
               <p>html代码</p>
               <pre class="content2"><div codelighter='html'><div>
-<img id="image" src="picture.jpg">
+<img id="image" src="">
 </div></div></pre>
               <p>js代码</p>
               <pre class="content2"><div codelighter='javascript'>import Cropper from 'cropperjs';
@@ -435,6 +435,11 @@ bgParallax: true
           </ul>
         </aside>
       </div>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          console.log('我是components页面上的js,我发誓我能被加载!')
+        });
+      </script>
     </article>
   </main>
 
