@@ -141,15 +141,15 @@
   margin-bottom: 0.4375rem !important;
 }
 @for $i from 1 through 5 {
-  .br#{$i} {
+  .br_#{$i} {
     border-radius: #{$i}px;
   }
 }
 
-.br50 {
+.br_50 {
   border-radius: 50px;
 }
 
-.br100 {
+.br_100 {
   border-radius: 100px;
 }
