@@ -24,6 +24,9 @@
 ## Dir
 ```
 .
++-- config
+|   +-- webpack.config.js
+|   +-- postcss.config.js
 +-- dist(Publish directory)
 |
 +-- src(Development Directory)
@@ -43,18 +46,38 @@
 |   |   +-- main.js
 |   +-- media
 |   +-- scss
-+-- webpack.config.js
-+-- postcss.config.js
 +-- package.json
 
 ```
 
-### 更新计划:
+### 每页js类:
+#### 例子:
+```
+import debug from '../components/debug/debug'; // 控制台调试
+import fixed from '../components/fixed/fixed'; // 右侧导航 滚动固定位置
+import lighter from '../components/code-lighter/code-lighter'; // 高亮插件
 
-~~1.优化pjax + router~~
-
-~~2.优化滚动条 使用nicescroll  https://github.com/inuyaksa/jquery.nicescroll~~
-
-~~3.优化页面滚动动画 增加 aoc  https://github.com/michalsnik/aos~~
-
-~~4.增加 Parallax  Scrolling http://pixelcog.github.io/parallax.js/~~
+export default class Pages {
+  constructor(setNavActive) {
+    // 设置导航第几个选中
+    setNavActive(3);
+    // 控制台输出信息 方便调试页面是否加载
+    debug('pages controller is load');
+    // 右侧导航 滚动固定
+    fixed();
+  }
+  // 主方法
+  index() {
+    // 调用高亮方法
+    this.gaoliang();
+  }
+  // 代码高亮
+  gaoliang() {
+    const option = {
+      tabSpace: 0,
+      style: 'light'
+    };
+    lighter.auto(option);
+  }
+}
+```
