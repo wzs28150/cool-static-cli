@@ -147,7 +147,6 @@ export default class Cool {
     });
 
     $(document).off('pjax:end').on('ready pjax:end', (data, options) => {
-      $('.page-animate').removeClass('page-animate-start').addClass('page-animate-end');
       const target = $(data.target).children();
       const controller = target.data('controller');
       const action = target.data('action');
