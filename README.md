@@ -7,21 +7,20 @@
 
 <!-- ## Demo
 > https://wzs28150.github.io/cool-static-cli/dist/ -->
-## Start
-> npm i cool-static-cli -g
-## Init
-> mkdir project && cd project
-> cool-static-cli init
-> npm i
-## Development
-> npm run dev
-## Build
-> npm run  build
-### SVG Sprites
-* Put svg files in src/img/svg
-* In HTML, use `<svg><use xlink:href="#svg-file-name"></use></svg>`
+## 安装包
+```
+npm i(或cnpm i)
+```
+## 运行开发
+```
+npm run dev
+```
+## 运行打包
+```
+npm run build
+```
 
-## Dir
+## 目录结构
 ```
 .
 +-- config
