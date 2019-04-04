@@ -90,8 +90,6 @@ export default class Cool {
     let scrollTo = 0;
     let jump = 'yes';
     const that = this;
-
-    console.log(window.location.origin);
     $(document).off('click', 'a[data-nopjax!=no]').on('click', 'a[data-nopjax!=no]', function (event) {
       const href = window.location.href;
       event.preventDefault();
