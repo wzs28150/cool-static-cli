@@ -130,4 +130,6 @@ export default class Pages {
 #### 容器  (宽度默认 大于等于1440px为1200px  1200px到1440px为1100px 手机为 宽度 100% 两部 15px 边距)
 ```
   container        : 默认容器(带居中,溢出隐藏,相对定位)
+  container-without-overflow ：容器(带居中,相对定位)
+  container-without-position ：容器(带居中,溢出隐藏)
 ```
