@@ -7,15 +7,18 @@
 // @import './includes/base';
 // @import './includes/mp';
 @import './includes/vars';
-@import './includes/fonts';
 @import './includes/mixins';
+@import './includes/fonts';
 @import './includes/color';
 @import './includes/ui';
 @import './common/header';
-@import './common/footer';
+@import './common/footer'; //
+/*组件样式*/
+@import './components/alert_player';
 @import '../js/components/code-lighter/code-lighter';
+@import 'cropperjs/dist/cropper.css';
+@import './components/news'; //
+/*页面样式*/
 @import './page/index';
 @import './page/start';
-@import 'cropperjs/dist/cropper.css';
 @import './page/components';
-@import './components/news';

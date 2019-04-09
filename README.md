@@ -157,13 +157,30 @@ export default class Pages {
 ```
 #### 容器  (宽度默认 大于等于1440px为1200px  1200px到1440px为1100px 手机为 宽度 100% 两部 15px 边距)
 ```
-  container        : 默认容器(带居中,溢出隐藏,相对定位)
-  container-without-overflow ：容器(带居中,相对定位)
-  container-without-position ：容器(带居中,溢出隐藏)
+  container                  : 默认容器 (带居中,溢出隐藏,相对定位)
+  container-without-overflow ：容器     (带居中,相对定位)
+  container-without-position ：容器     (带居中,溢出隐藏)
+  container-without-all      : 容器     (带居中)
 ```
 #### 响应式 (详细样式查看 http://flexboxgrid.com/ 官网)
 ```
 row             : 外层样式
 col-xs-12       : 12等分 (根据屏幕尺寸判断 分为xs sm md lg 如果写数值 则按照数值分 如果不写数值 则自动分配)
 col-xs-offset-3 : 前面空3等分开始
+pc              : 电脑端显示 手机端隐藏
+wap             : 电脑端隐藏 手机端显示
+```
+#### 分页
+```
+html结构:
+<div class="pagination">
+  <ul>
+    <a href="">上一页</a>
+    <a class="on" href="">1</a>
+    <a href="">2</a>
+    <a href="">3</a>
+    <a href="">4</a>
+    <a href="">下一页</a>
+  </ul>
+</div>
 ```
