@@ -23,28 +23,56 @@ npm run build
 ## 目录结构
 ```
 .
-+-- config
++-- config (项目配置目录)
 |   +-- webpack.config.js
 |   +-- postcss.config.js
-+-- dist(Publish directory)
 |
-+-- src(Development Directory)
-|   +-- favicon
-|   +-- fonts
-|   +-- html
-|   |   +-- include
++-- dist (打包后发布的所有资源)
+|
++-- src (开发目录)
+|   +-- favicon (地址栏图标)
+|   +-- fonts (网页用到的字体)
+|   +-- html (网页html)
+|   |   +-- include (包含引用的html碎片)
 |   |   |   +-- header.html
 |   |   |   +-- footer.html
-|   |   +-- views
+|   |   +-- views (包含每个页的html)
 |   |   |   +-- index.html
-|   +-- img
-|   +-- js
-|   |   +-- package
-|   |   +-- page
-|   |   +-- index.js
-|   |   +-- main.js
-|   +-- media
-|   +-- scss
+|   +-- img (图片文件夹)
+|   +-- js (js文件夹)
+|   |   +-- components (组件文件夹)
+|   |   |   +-- art (模板组件)
+|   |   |   +-- avatar (头像组件)
+|   |   |   +-- code-lighter (代码高亮组件)
+|   |   |   +-- debug (控制台调试组件)
+|   |   |   +-- fixed (侧边导航滚动定位组件)
+|   |   |   +-- lazeload (懒加载组件)
+|   |   |   +-- map (百度地图组件)
+|   |   |   +-- parallax (滚动视差组件)
+|   |   |   +-- photoswiper (图片放大组件)
+|   |   |   +-- promise (promise封装ajax组件)
+|   |   |   +-- cool.js (主程序文件,处理无刷新路由,滚动条等)
+|   |   +-- lib (不需要打包的大文件第三方库文件夹,如swiper,jquery等)
+|   |   +-- page (包含每个页js)
+|   |   |   +-- index.js (首页js)
+|   |   +-- index.js (入口主文件)
+|
+|   +-- media (多媒体文件夹,存放视频音乐)
+|
+|   +-- scss (scss文件夹)
+|   |   +-- common (公共组件样式件夹,头部底部)
+|   |   +-- components (组件文样式件夹)
+|   |   +-- include (一些基础样式文件夹)
+|   |   |   +-- color.scss (设置颜色)
+|   |   |   +-- fonts.scss (设置字体)
+|   |   |   +-- mixins.scss (一些scss函数)
+|   |   |   +-- ui.scss (ui样式)
+|   |   |   +-- vars.scss (一些scss变量)
+|   |   +-- lib (一些不需要打包的公共样式,包括core里的所有)
+|   |   +-- core (核心样式已经打包到lib里)
+|   |   +-- page (存放每个页样式)
+|   |   +-- style.scss (入口样式)
+|
 +-- package.json
 
 ```
