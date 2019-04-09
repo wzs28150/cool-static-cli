@@ -14,7 +14,10 @@ const PostcssConfigPath = './config/postcss.config.js';
 const HappyPack = require('happypack');
 const os = require('os');
 const ip = require('ip');
-const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
+const happyThreadPool = HappyPack.ThreadPool({
+  size: os.cpus().length
+});
+
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
   return templateFiles.map((item) => {
@@ -43,52 +46,52 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.js$/,
-      include: path.resolve(__dirname, '../src/js'),
-      use: ['happypack/loader?id=js'],
-      exclude: path.resolve(__dirname, '../node_modules')
+        test: /\.js$/,
+        include: path.resolve(__dirname, '../src/js'),
+        use: ['happypack/loader?id=js'],
+        exclude: path.resolve(__dirname, '../node_modules')
     },
 
-    {
-      test: /\.(sass|scss)$/,
-      include: path.resolve(__dirname, '../src/scss'),
-      use: ExtractTextPlugin.extract({
-        use: [{
-          loader: 'css-loader',
-          options: {
-            sourceMap: true,
-            minimize: true,
-            url: false
-          }
+      {
+        test: /\.(sass|scss)$/,
+        include: path.resolve(__dirname, '../src/scss'),
+        use: ExtractTextPlugin.extract({
+          use: [{
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+                minimize: true,
+                url: false
+              }
         },
-        {
-          loader: 'postcss-loader',
-          options: {
-            sourceMap: true,
-            config: {
-              path: PostcssConfigPath
-            }
-          }
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+                config: {
+                  path: PostcssConfigPath
+                }
+              }
         },
-        {
-          loader: 'sass-loader'
+            {
+              loader: 'sass-loader'
         }
         ]
-      })
+        })
     },
-    {
-      test: /\.html$/,
-      include: path.resolve(__dirname, '../src/html/includes'),
-      use: ['happypack/loader?id=html']
-    },
-    {
-      test: /\.svg$/,
-      include: path.resolve(__dirname, '../src/img/svg'),
-      use: [{
-        loader: 'svg-sprite-loader'
-      },
       {
-        loader: 'svgo-loader'
+        test: /\.html$/,
+        include: path.resolve(__dirname, '../src/html/includes'),
+        use: ['happypack/loader?id=html']
+    },
+      {
+        test: /\.svg$/,
+        include: path.resolve(__dirname, '../src/img/svg'),
+        use: [{
+            loader: 'svg-sprite-loader'
+      },
+          {
+            loader: 'svgo-loader'
       }
       ]
     }
@@ -122,24 +125,28 @@ module.exports = {
 
     new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin([{
-      from: './src/fonts',
-      to: './fonts'
+        from: './src/fonts',
+        to: './fonts'
     },
-    {
-      from: './src/media',
-      to: './media'
+      {
+        from: './src/media',
+        to: './media'
     },
-    {
-      from: './src/js/lib',
-      to: './js/lib'
+      {
+        from: './src/js/lib',
+        to: './js/lib'
     },
-    {
-      from: './src/favicon',
-      to: './favicon'
+      {
+        from: './src/scss/lib',
+        to: './css/lib'
     },
-    {
-      from: './src/img',
-      to: './img'
+      {
+        from: './src/favicon',
+        to: './favicon'
+    },
+      {
+        from: './src/img',
+        to: './img'
     }
     ]),
     new SpriteLoaderPlugin(),
@@ -160,10 +167,10 @@ module.exports = {
     //   errors: true
     // },
     // disableHostCheck: true
-    host:  ip.address(),
+    quiet: true,
+    host: ip.address(),
     // port: 1573, // 端口
     open: true, // 自动打开页面，
-    hot: true, // 开启热更新
     noInfo: true,
     overlay: {
       errors: true, // 编译过程中如果有任何错误，都会显示到页面上

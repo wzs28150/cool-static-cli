@@ -1,61 +1,62 @@
 <!doctype html>
 <html lang="zh-CN">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="icon" type="image/png" href="favicon/favicon.png">
-    <link rel="stylesheet" href="css/coolstyle.css">
-    <script src="js/lib/jquery.min.js"></script>
-    <script src="js/lib/swiper.min.js"></script>
-    <script src="js/lib/jquery.nicescroll.js"></script>
-    <title>
-      <%=title%>
-    </title>
-  </head>
+  <link rel="icon" type="image/png" href="favicon/favicon.png">
+  <link rel="stylesheet" href="css/lib/common.css">
+  <link rel="stylesheet" href="css/coolstyle.css">
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/lib/swiper.min.js"></script>
+  <script src="js/lib/jquery.nicescroll.js"></script>
+  <title>
+    <%=title%>
+  </title>
+</head>
 
-  <body>
-    <!-- 弹窗 -->
-    <div class="alert_player" style="display:none;">
-      <div class="bg"></div>
-      <div class="layer">
-        <div class="info"></div>
-        <a class="queren_btn" data-ajax="no">确认</a>
+<body>
+  <!-- 弹窗 -->
+  <div class="alert_player" style="display:none;">
+    <div class="bg"></div>
+    <div class="layer">
+      <div class="info"></div>
+      <a class="queren_btn" data-ajax="no">确认</a>
+    </div>
+  </div>
+  <!-- 弹窗 -->
+  <input type="checkbox" id="navshow">
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h2>cool web</h2>
+      </div>
+      <nav>
+        <a href="index.html">首页</a>
+        <a href="start.html">起步</a>
+        <a href="components.html">组件</a>
+        <a href="pages.html">页面</a>
+        <a data-ajax="no" href="javascript:void(0);">案例</a>
+        <iframe src="https://ghbtns.com/github-btn.html?user=wzs28150&repo=cool-static-cli&type=star&count=false&size=large" frameborder="0" scrolling="0" width="75px" height="30px" style="margin-top:15px; float:right;"></iframe>
+      </nav>
+      <label for="navshow" class="navbar wap">
+        <div class="menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"> </div>
+        </div>
+      </label>
+      <div class="shadow wap"></div>
+    </div>
+  </header>
+
+  <div class="loaders">
+    <div class="loader">
+      <div class="ball-clip-rotate-multiple">
+        <div></div>
+        <div></div>
       </div>
     </div>
-    <!-- 弹窗 -->
-    <input type="checkbox" id="navshow">
-
-    <header>
-      <div class="container">
-        <div class="logo">
-          <h2>cool web</h2>
-        </div>
-        <nav>
-          <a href="index.html">首页</a>
-          <a href="start.html">起步</a>
-          <a href="components.html">组件</a>
-          <a href="pages.html">页面</a>
-          <a data-ajax="no" href="javascript:void(0);">案例</a>
-          <iframe src="https://ghbtns.com/github-btn.html?user=wzs28150&repo=cool-static-cli&type=star&count=false&size=large" frameborder="0" scrolling="0" width="75px" height="30px" style="margin-top:15px; float:right;"></iframe>
-        </nav>
-        <label for="navshow" class="navbar wap">
-          <div class="menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"> </div>
-          </div>
-        </label>
-        <div class="shadow wap"></div>
-      </div>
-    </header>
-
-    <div class="loaders">
-      <div class="loader">
-        <div class="ball-clip-rotate-multiple">
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    </div>
+  </div>
