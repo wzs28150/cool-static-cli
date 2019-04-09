@@ -50,6 +50,10 @@ export default class Cool {
     rcm.init({
       area: 'body',
       items: {
+        "home": {
+          name: "返回首页",
+          icon: 'home'
+        },
         "refresh": {
           name: "刷新页面",
           icon: 'refresh'
@@ -76,7 +80,17 @@ export default class Cool {
             scrollTo: false
           });
           // window.history.back()
-        }else if (res.data == 'zhichi') {
+        } else if (res.data == 'home') {
+          // console.log(document.referrer);
+          $.pjax({
+            url: '/',
+            container: "main",
+            fragment: "main",
+            timeout: 8000,
+            scrollTo: false
+          });
+          // window.history.back()
+        } else if (res.data == 'zhichi') {
           // console.log(document.referrer);
           window.open('http://www.hrbkcwl.com')
           // window.history.back()

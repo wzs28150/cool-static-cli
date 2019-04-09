@@ -51,6 +51,7 @@ npm run build
 |   |   |   +-- parallax (滚动视差组件)
 |   |   |   +-- photoswiper (图片放大组件)
 |   |   |   +-- promise (promise封装ajax组件)
+|   |   |   +-- rightmenu (右键菜单组件)
 |   |   |   +-- cool.js (主程序文件,处理无刷新路由,滚动条等)
 |   |   +-- lib (不需要打包的大文件第三方库文件夹,如swiper,jquery等)
 |   |   +-- page (包含每个页js)
