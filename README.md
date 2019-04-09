@@ -161,3 +161,9 @@ export default class Pages {
   container-without-overflow ：容器(带居中,相对定位)
   container-without-position ：容器(带居中,溢出隐藏)
 ```
+#### 响应式 (详细样式查看 http://flexboxgrid.com/ 官网)
+```
+row             : 外层样式
+col-xs-12       : 12等分 (根据屏幕尺寸判断 分为xs sm md lg 如果写数值 则按照数值分 如果不写数值 则自动分配)
+col-xs-offset-3 : 前面空3等分开始
+```
