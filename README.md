@@ -170,7 +170,7 @@ col-xs-offset-3 : 前面空3等分开始
 pc              : 电脑端显示 手机端隐藏
 wap             : 电脑端隐藏 手机端显示
 ```
-#### 分页
+#### 分页 pagination
 ```
 html结构:
 <div class="pagination">
@@ -182,5 +182,13 @@ html结构:
     <a href="">4</a>
     <a href="">下一页</a>
   </ul>
+</div>
+```
+#### 上下页 page_up_down
+```
+html结构:
+<div class="page_up_down">
+<a href="">上一篇:标题标题标题标题标题标题标题标题标题标题</a>
+<a href="">下一篇:标题标题标题标题标题标题标题标题标题标题</a>
 </div>
 ```
