@@ -11,6 +11,7 @@
 
 import debug from './debug/debug';
 import 'jquery-pjax/jquery.pjax.js';
+import './rightmenu/rightmenu.js';
 import NProgress from 'nprogress';
 import AOS from 'aos';
 
@@ -45,9 +46,47 @@ export default class Cool {
   }
   // 右键菜单
   rightMenu() {
-    document.oncontextmenu = function () {
-      return false;
-    };
+    var rcm = window.RMenu;
+    rcm.init({
+      area: 'body',
+      items: {
+        "refresh": {
+          name: "刷新页面",
+          icon: 'refresh'
+        },
+        "back": {
+          name: "返回前面",
+          icon: 'undo'
+        },
+        "zhichi": {
+          name: "技术支持",
+          icon: 'copyright'
+        },
+      },
+      callback: function (res) {
+        if (res.data == 'refresh') {
+          window.location.reload();
+        } else if (res.data == 'back') {
+          // console.log(document.referrer);
+          $.pjax({
+            url: document.referrer,
+            container: "main",
+            fragment: "main",
+            timeout: 8000,
+            scrollTo: false
+          });
+          // window.history.back()
+        }else if (res.data == 'zhichi') {
+          // console.log(document.referrer);
+          window.open('http://www.hrbkcwl.com')
+          // window.history.back()
+        }
+      }
+    })
+
+    // document.oncontextmenu = function () {
+    //   return false;
+    // };
   }
   // 滚动条
   scroller() {
@@ -195,7 +234,9 @@ export default class Cool {
   router(controller, action, state) {
     if (controller) {
       const controllerjs = require(`../page/${controller}`);
-      const index = new controllerjs.default((a) => { this.navActive(a); });
+      const index = new controllerjs.default((a) => {
+        this.navActive(a);
+      });
       const str1 = `index.${action}();`;
       eval(str1);
       localStorage.controller = controller;
