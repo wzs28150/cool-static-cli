@@ -83,7 +83,7 @@ export default class Cool {
         } else if (res.data == 'home') {
           // console.log(document.referrer);
           $.pjax({
-            url: '/',
+            url: './',
             container: "main",
             fragment: "main",
             timeout: 8000,
