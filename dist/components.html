@@ -77,7 +77,8 @@
               <h2>栅格 采用flexboxgrid 处理响应式布局</h2>
               <p class="description"><a data-ajax="no" href="http://flexboxgrid.com">官方文档&nbsp;:&nbsp;&nbsp;http://flexboxgrid.com</a></p>
               <h3>示例:</h3>
-              <pre class="content2"><div codelighter='html'>    <div class="row">
+              <p>注：xs(小于768) sm(大于768小于1024) md(大于1024小于1200) lg(大于1200)</p>
+              <pre class="content2"><div codelighter='html'><div class="row">
 <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
 <div class="box-row"></div>
 </div>
@@ -126,7 +127,7 @@
               <h3>示例:</h3>
               <p>&nbsp;</p>
               <p>html代码</p>
-              <pre class="content2"><div codelighter='html'>  <div class="swiper-container">
+              <pre class="content2"><div codelighter='html'><div class="swiper-container">
 <div class="swiper-wrapper">
 <div class="swiper-slide">Slide 1</div>
 <div class="swiper-slide">Slide 2</div>
@@ -145,7 +146,7 @@
               <p>引入方式</p>
               <pre class="content2"><div codelighter='javascript'>  import Swiper from 'swiper';</div></pre>
               <p>js代码</p>
-              <pre class="content2"><div codelighter='javascript'>  var mySwiper = new Swiper ('.swiper-container', {
+              <pre class="content2"><div codelighter='javascript'>var mySwiper = new Swiper ('.swiper-container', {
 direction: 'vertical',
 loop: true,
 
@@ -266,7 +267,7 @@ console.log(event.detail.scaleY);
               <p>引入方式</p>
               <pre class="content2"><div codelighter='javascript'>  import '../components/parallax/jquery.scrolly.js';</div></pre>
               <p>js代码</p>
-              <pre class="content2"><div codelighter='javascript'>  $('.parallax').scrolly({
+              <pre class="content2"><div codelighter='javascript'>$('.parallax').scrolly({
 bgParallax: true
 });</div></pre>
               <div class="parallax-window">
